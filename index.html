@@ -43,6 +43,10 @@
             overflow: hidden;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e8eaf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .kitten-container:hover {
@@ -50,10 +54,208 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .kitten-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .kitten-container:hover .kitten {
+            animation: kittenBounce 0.6s ease infinite;
+        }
+
+        /* Pure CSS Kitten */
+        .kitten {
+            position: relative;
+            width: 90px;
+            height: 80px;
+            margin-top: 10px;
+            animation: kittenFloat 3s ease-in-out infinite;
+        }
+
+        /* Head */
+        .kitten-head {
+            position: absolute;
+            width: 64px;
+            height: 56px;
+            background: #4a4a4a;
+            border-radius: 50% 50% 45% 45%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* Ears */
+        .kitten-ear-left,
+        .kitten-ear-right {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid #4a4a4a;
+            z-index: 1;
+            top: -10px;
+        }
+
+        .kitten-ear-left {
+            left: 50%;
+            transform: translateX(-32px) rotate(-10deg);
+        }
+
+        .kitten-ear-right {
+            left: 50%;
+            transform: translateX(8px) rotate(10deg);
+        }
+
+        .kitten-ear-left::after,
+        .kitten-ear-right::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 13px solid #ffb6c1;
+            top: 5px;
+            left: -7px;
+        }
+
+        /* Eyes */
+        .kitten-eyes {
+            position: absolute;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 3;
+        }
+
+        .kitten-eye {
+            width: 14px;
+            height: 14px;
+            background: #1d1d1f;
+            border-radius: 50%;
+            position: relative;
+            animation: blink 4s ease-in-out infinite;
+        }
+
+        .kitten-eye::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+        }
+
+        /* Nose */
+        .kitten-nose {
+            position: absolute;
+            top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 5px;
+            background: #ffb6c1;
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            z-index: 3;
+        }
+
+        /* Mouth */
+        .kitten-mouth {
+            position: absolute;
+            top: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 6px;
+            z-index: 3;
+        }
+
+        .kitten-mouth::before,
+        .kitten-mouth::after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 6px;
+            border-bottom: 2px solid #3a3a3a;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .kitten-mouth::before { left: 0; }
+        .kitten-mouth::after { right: 0; }
+
+        /* Whiskers */
+        .kitten-whiskers {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 20px;
+            z-index: 3;
+        }
+
+        .kitten-whiskers::before,
+        .kitten-whiskers::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 1px;
+            background: #888;
+            top: 6px;
+        }
+
+        .kitten-whiskers::before { left: 0; transform: rotate(-5deg); }
+        .kitten-whiskers::after { right: 0; transform: rotate(5deg); }
+
+        /* Body */
+        .kitten-body {
+            position: absolute;
+            width: 54px;
+            height: 36px;
+            background: #4a4a4a;
+            border-radius: 50% 50% 40% 40%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Tail */
+        .kitten-tail {
+            position: absolute;
+            width: 30px;
+            height: 14px;
+            border: 3px solid #4a4a4a;
+            border-color: #4a4a4a transparent transparent transparent;
+            border-radius: 50% 50% 0 0;
+            bottom: 8px;
+            right: 2px;
+            z-index: 0;
+            transform-origin: left center;
+            animation: tailWag 1.5s ease-in-out infinite;
+        }
+
+        @keyframes kittenFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes kittenBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes blink {
+            0%, 42%, 46%, 100% { transform: scaleY(1); }
+            44% { transform: scaleY(0.1); }
+        }
+
+        @keyframes tailWag {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-10deg); }
         }
 
         .greeting {
@@ -162,7 +364,21 @@
 <body>
     <main class="hero">
         <div class="kitten-container">
-            <img src="https://placekitten.com/400/400" alt="Cute kitten">
+            <div class="kitten">
+                <div class="kitten-ear-left"></div>
+                <div class="kitten-ear-right"></div>
+                <div class="kitten-head">
+                    <div class="kitten-eyes">
+                        <div class="kitten-eye"></div>
+                        <div class="kitten-eye"></div>
+                    </div>
+                    <div class="kitten-nose"></div>
+                    <div class="kitten-mouth"></div>
+                    <div class="kitten-whiskers"></div>
+                </div>
+                <div class="kitten-body"></div>
+                <div class="kitten-tail"></div>
+            </div>
         </div>
         <p class="greeting">Hello, world</p>
         <h1>TheOohWee.</h1>
