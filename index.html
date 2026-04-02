@@ -40,211 +40,30 @@
             height: 180px;
             margin: 0 auto 2.5rem;
             border-radius: 50%;
-            overflow: hidden;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e8eaf6);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .kitten-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .kitten-container:hover .kitten {
-            animation: kittenBounce 0.6s ease infinite;
-        }
-
-        /* Pure CSS Kitten */
-        .kitten {
-            position: relative;
-            width: 90px;
-            height: 80px;
-            margin-top: 10px;
             animation: kittenFloat 3s ease-in-out infinite;
         }
 
-        /* Head */
-        .kitten-head {
-            position: absolute;
-            width: 64px;
-            height: 56px;
-            background: #4a4a4a;
-            border-radius: 50% 50% 45% 45%;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
+        .kitten-container:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            animation: none;
         }
 
-        /* Ears */
-        .kitten-ear-left,
-        .kitten-ear-right {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 20px solid #4a4a4a;
-            z-index: 1;
-            top: -10px;
-        }
-
-        .kitten-ear-left {
-            left: 50%;
-            transform: translateX(-32px) rotate(-10deg);
-        }
-
-        .kitten-ear-right {
-            left: 50%;
-            transform: translateX(8px) rotate(10deg);
-        }
-
-        .kitten-ear-left::after,
-        .kitten-ear-right::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 13px solid #ffb6c1;
-            top: 5px;
-            left: -7px;
-        }
-
-        /* Eyes */
-        .kitten-eyes {
-            position: absolute;
-            top: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 44px;
-            display: flex;
-            justify-content: space-between;
-            z-index: 3;
-        }
-
-        .kitten-eye {
-            width: 14px;
-            height: 14px;
-            background: #1d1d1f;
-            border-radius: 50%;
-            position: relative;
-            animation: blink 4s ease-in-out infinite;
-        }
-
-        .kitten-eye::after {
-            content: '';
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 3px;
-        }
-
-        /* Nose */
-        .kitten-nose {
-            position: absolute;
-            top: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 5px;
-            background: #ffb6c1;
-            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-            z-index: 3;
-        }
-
-        /* Mouth */
-        .kitten-mouth {
-            position: absolute;
-            top: 36px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 16px;
-            height: 6px;
-            z-index: 3;
-        }
-
-        .kitten-mouth::before,
-        .kitten-mouth::after {
-            content: '';
-            position: absolute;
-            width: 9px;
-            height: 6px;
-            border-bottom: 2px solid #3a3a3a;
-            border-radius: 0 0 50% 50%;
-        }
-
-        .kitten-mouth::before { left: 0; }
-        .kitten-mouth::after { right: 0; }
-
-        /* Whiskers */
-        .kitten-whiskers {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 20px;
-            z-index: 3;
-        }
-
-        .kitten-whiskers::before,
-        .kitten-whiskers::after {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 1px;
-            background: #888;
-            top: 6px;
-        }
-
-        .kitten-whiskers::before { left: 0; transform: rotate(-5deg); }
-        .kitten-whiskers::after { right: 0; transform: rotate(5deg); }
-
-        /* Body */
-        .kitten-body {
-            position: absolute;
-            width: 54px;
-            height: 36px;
-            background: #4a4a4a;
-            border-radius: 50% 50% 40% 40%;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        /* Tail */
-        .kitten-tail {
-            position: absolute;
-            width: 30px;
-            height: 14px;
-            border: 3px solid #4a4a4a;
-            border-color: #4a4a4a transparent transparent transparent;
-            border-radius: 50% 50% 0 0;
-            bottom: 8px;
-            right: 2px;
-            z-index: 0;
-            transform-origin: left center;
-            animation: tailWag 1.5s ease-in-out infinite;
+        .kitten-container svg {
+            width: 120px;
+            height: 120px;
+            margin-top: 8px;
         }
 
         @keyframes kittenFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        @keyframes kittenBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         @keyframes blink {
@@ -254,8 +73,8 @@
 
         @keyframes tailWag {
             0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(15deg); }
-            75% { transform: rotate(-10deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-15deg); }
         }
 
         .greeting {
@@ -364,21 +183,57 @@
 <body>
     <main class="hero">
         <div class="kitten-container">
-            <div class="kitten">
-                <div class="kitten-ear-left"></div>
-                <div class="kitten-ear-right"></div>
-                <div class="kitten-head">
-                    <div class="kitten-eyes">
-                        <div class="kitten-eye"></div>
-                        <div class="kitten-eye"></div>
-                    </div>
-                    <div class="kitten-nose"></div>
-                    <div class="kitten-mouth"></div>
-                    <div class="kitten-whiskers"></div>
-                </div>
-                <div class="kitten-body"></div>
-                <div class="kitten-tail"></div>
-            </div>
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tail -->
+                <path d="M85 88 Q105 75 100 60 Q97 52 90 55" fill="none" stroke="#6b6b6b" stroke-width="4" stroke-linecap="round" style="transform-origin: 85px 88px; animation: tailWag 1.5s ease-in-out infinite;"/>
+
+                <!-- Body -->
+                <ellipse cx="60" cy="90" rx="28" ry="20" fill="#7a7a7a"/>
+
+                <!-- Left paw -->
+                <ellipse cx="42" cy="105" rx="8" ry="5" fill="#6b6b6b"/>
+                <!-- Right paw -->
+                <ellipse cx="78" cy="105" rx="8" ry="5" fill="#6b6b6b"/>
+
+                <!-- Head -->
+                <ellipse cx="60" cy="52" rx="30" ry="27" fill="#8a8a8a"/>
+
+                <!-- Left ear -->
+                <polygon points="35,35 28,10 48,28" fill="#8a8a8a"/>
+                <polygon points="37,32 32,16 46,30" fill="#ffb6c1"/>
+
+                <!-- Right ear -->
+                <polygon points="85,35 92,10 72,28" fill="#8a8a8a"/>
+                <polygon points="83,32 88,16 74,30" fill="#ffb6c1"/>
+
+                <!-- Eyes -->
+                <g style="transform-origin: 60px 48px; animation: blink 4s ease-in-out infinite;">
+                    <!-- Left eye -->
+                    <ellipse cx="48" cy="48" rx="7" ry="7.5" fill="#2d2d2d"/>
+                    <ellipse cx="46" cy="46" rx="2.5" ry="2.5" fill="white"/>
+                    <!-- Right eye -->
+                    <ellipse cx="72" cy="48" rx="7" ry="7.5" fill="#2d2d2d"/>
+                    <ellipse cx="70" cy="46" rx="2.5" ry="2.5" fill="white"/>
+                </g>
+
+                <!-- Nose -->
+                <ellipse cx="60" cy="58" rx="3.5" ry="2.5" fill="#ffb6c1"/>
+
+                <!-- Mouth -->
+                <path d="M56 61 Q60 65 60 61" fill="none" stroke="#5a5a5a" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M64 61 Q60 65 60 61" fill="none" stroke="#5a5a5a" stroke-width="1.2" stroke-linecap="round"/>
+
+                <!-- Whiskers -->
+                <line x1="15" y1="53" x2="40" y2="56" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+                <line x1="17" y1="60" x2="40" y2="60" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+                <line x1="15" y1="67" x2="40" y2="64" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+                <line x1="80" y1="56" x2="105" y2="53" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+                <line x1="80" y1="60" x2="103" y2="60" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+                <line x1="80" y1="64" x2="105" y2="67" stroke="#aaa" stroke-width="1" stroke-linecap="round"/>
+
+                <!-- Chest patch -->
+                <ellipse cx="60" cy="85" rx="12" ry="10" fill="#9a9a9a"/>
+            </svg>
         </div>
         <p class="greeting">Hello, world</p>
         <h1>TheOohWee.</h1>
