@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheOohWee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1d1d1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            max-width: 680px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        .kitten-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .kitten-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .kitten-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .greeting {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #86868b;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #6e6e73;
+            line-height: 1.5;
+            margin-bottom: 2.5rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #0071e3;
+            transition: width 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #0077ed;
+        }
+
+        .links a:hover::after {
+            width: 100%;
+        }
+
+        .links a span {
+            font-size: 0.75rem;
+            margin-left: 0.15rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .links a:hover span {
+            transform: translateX(3px);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kitten-container {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="hero">
+        <div class="kitten-container">
+            <img src="https://placekitten.com/400/400" alt="Cute kitten">
+        </div>
+        <p class="greeting">Hello, world</p>
+        <h1>TheOohWee.</h1>
+        <p class="tagline">Developer. Creator. Cat enthusiast.</p>
+        <nav class="links">
+            <a href="https://github.com/theoohwee">GitHub <span>&rsaquo;</span></a>
+            <a href="#">Projects <span>&rsaquo;</span></a>
+            <a href="#">Contact <span>&rsaquo;</span></a>
+        </nav>
+    </main>
+</body>
+</html>
