@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - TheOohWee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a.back {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a.back:hover { color: #0077ed; }
+
+        nav .nav-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        nav .spacer { width: 60px; }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 7rem 2rem 3rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #86868b;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: fadeUp 0.8s ease-out both;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:nth-child(2) { animation-delay: 0.1s; }
+        .project-card:nth-child(3) { animation-delay: 0.2s; }
+        .project-card:nth-child(4) { animation-delay: 0.3s; }
+        .project-card:nth-child(5) { animation-delay: 0.4s; }
+        .project-card:nth-child(6) { animation-delay: 0.5s; }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-text {
+            padding: 1.25rem;
+        }
+
+        .project-text .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-text .desc {
+            font-size: 0.85rem;
+            color: #6e6e73;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tags span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background: #f5f5f7;
+            color: #86868b;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="back">&lsaquo; Home</a>
+        <span class="nav-title">Projects</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <header class="page-header">
+        <h1>Projects.</h1>
+        <p>Things I've built and tinkered with.</p>
+    </header>
+
+    <section class="project-grid">
+
+        <!-- Project 1: Personal Website -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#f0f4ff"/>
+                    <!-- Browser window -->
+                    <rect x="60" y="50" width="280" height="200" rx="10" fill="white" stroke="#e8e8ed" stroke-width="2"/>
+                    <rect x="60" y="50" width="280" height="30" rx="10" fill="#f5f5f7"/>
+                    <rect x="60" y="70" width="280" height="10" fill="#f5f5f7"/>
+                    <!-- Dots -->
+                    <circle cx="78" cy="65" r="4" fill="#ff5f57"/>
+                    <circle cx="92" cy="65" r="4" fill="#febc2e"/>
+                    <circle cx="106" cy="65" r="4" fill="#28c840"/>
+                    <!-- URL bar -->
+                    <rect x="130" y="58" width="195" height="14" rx="4" fill="#e8e8ed"/>
+                    <text x="228" y="69" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#86868b">theoohwee.dev</text>
+                    <!-- Page content preview -->
+                    <circle cx="200" cy="115" r="18" fill="#e8eaf6"/>
+                    <rect x="160" y="140" width="80" height="8" rx="4" fill="#d1d1d6"/>
+                    <rect x="140" y="155" width="120" height="5" rx="2.5" fill="#e8e8ed"/>
+                    <rect x="155" y="165" width="90" height="5" rx="2.5" fill="#e8e8ed"/>
+                    <!-- Links -->
+                    <rect x="142" y="185" width="35" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
+                    <rect x="185" y="185" width="30" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
+                    <rect x="223" y="185" width="35" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">Personal Website</p>
+                <p class="desc">This very site! A minimal, Apple-inspired personal portfolio and blog.</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SVG</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 2: CLI Tool -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#1d1d1f"/>
+                    <!-- Terminal window -->
+                    <rect x="40" y="35" width="320" height="230" rx="10" fill="#2d2d2d"/>
+                    <rect x="40" y="35" width="320" height="28" rx="10" fill="#3a3a3c"/>
+                    <rect x="40" y="55" width="320" height="8" fill="#3a3a3c"/>
+                    <!-- Dots -->
+                    <circle cx="58" cy="49" r="4" fill="#ff5f57"/>
+                    <circle cx="72" cy="49" r="4" fill="#febc2e"/>
+                    <circle cx="86" cy="49" r="4" fill="#28c840"/>
+                    <!-- Terminal text -->
+                    <text x="55" y="85" font-family="monospace" font-size="11" fill="#28c840">$</text>
+                    <text x="68" y="85" font-family="monospace" font-size="11" fill="#e8e8ed">python taskmaster.py</text>
+                    <text x="55" y="105" font-family="monospace" font-size="11" fill="#86868b">Loading tasks...</text>
+                    <text x="55" y="125" font-family="monospace" font-size="11" fill="#0071e3">[1]</text>
+                    <text x="85" y="125" font-family="monospace" font-size="11" fill="#e8e8ed">Finish homework</text>
+                    <text x="270" y="125" font-family="monospace" font-size="11" fill="#febc2e">pending</text>
+                    <text x="55" y="145" font-family="monospace" font-size="11" fill="#0071e3">[2]</text>
+                    <text x="85" y="145" font-family="monospace" font-size="11" fill="#e8e8ed">Build project</text>
+                    <text x="270" y="145" font-family="monospace" font-size="11" fill="#28c840">done</text>
+                    <text x="55" y="165" font-family="monospace" font-size="11" fill="#0071e3">[3]</text>
+                    <text x="85" y="165" font-family="monospace" font-size="11" fill="#e8e8ed">Touch grass</text>
+                    <text x="270" y="165" font-family="monospace" font-size="11" fill="#febc2e">pending</text>
+                    <text x="55" y="195" font-family="monospace" font-size="11" fill="#28c840">$</text>
+                    <text x="68" y="195" font-family="monospace" font-size="11" fill="#e8e8ed">_</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">TaskMaster CLI</p>
+                <p class="desc">A command-line task manager with color-coded priorities and deadline tracking.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>CLI</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 3: Weather App -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#e3f2fd"/>
+                    <!-- Phone frame -->
+                    <rect x="140" y="25" width="120" height="250" rx="18" fill="#1d1d1f"/>
+                    <rect x="146" y="40" width="108" height="220" rx="4" fill="linear-gradient(180deg, #4fc3f7, #0288d1)"/>
+                    <rect x="146" y="40" width="108" height="220" rx="4" fill="#4fc3f7"/>
+                    <!-- Notch -->
+                    <rect x="175" y="25" width="50" height="12" rx="6" fill="#1d1d1f"/>
+                    <!-- Sun -->
+                    <circle cx="200" cy="90" r="22" fill="#ffca28"/>
+                    <circle cx="200" cy="90" r="18" fill="#ffd54f"/>
+                    <!-- Cloud -->
+                    <ellipse cx="215" cy="115" rx="22" ry="12" fill="white" opacity="0.9"/>
+                    <ellipse cx="205" cy="110" rx="14" ry="10" fill="white" opacity="0.9"/>
+                    <!-- Temperature -->
+                    <text x="200" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-weight="300" font-size="28" fill="white">72°</text>
+                    <text x="200" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="white" opacity="0.8">Mostly Sunny</text>
+                    <!-- Stats row -->
+                    <text x="165" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">HUMIDITY</text>
+                    <text x="165" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">45%</text>
+                    <text x="200" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">WIND</text>
+                    <text x="200" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">8mph</text>
+                    <text x="235" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">UV</text>
+                    <text x="235" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">6</text>
+                    <!-- Home indicator -->
+                    <rect x="180" y="252" width="40" height="4" rx="2" fill="white" opacity="0.5"/>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">WeatherNow</p>
+                <p class="desc">A clean weather app with real-time forecasts and a minimal UI.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>API</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 4: Study Timer -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#fce4ec"/>
+                    <!-- Timer circle -->
+                    <circle cx="200" cy="145" r="85" fill="none" stroke="#e8e8ed" stroke-width="8"/>
+                    <circle cx="200" cy="145" r="85" fill="none" stroke="#ff453a" stroke-width="8" stroke-dasharray="400 534" stroke-linecap="round" transform="rotate(-90 200 145)"/>
+                    <!-- Inner circle -->
+                    <circle cx="200" cy="145" r="72" fill="white" opacity="0.5"/>
+                    <!-- Time display -->
+                    <text x="200" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-weight="300" font-size="36" fill="#1d1d1f">18:42</text>
+                    <text x="200" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#ff453a">FOCUS TIME</text>
+                    <!-- Controls -->
+                    <circle cx="170" cy="260" r="14" fill="#e8e8ed"/>
+                    <rect x="165" y="254" width="4" height="12" rx="1" fill="#86868b"/>
+                    <rect x="172" y="254" width="4" height="12" rx="1" fill="#86868b"/>
+                    <circle cx="200" cy="260" r="14" fill="#ff453a"/>
+                    <rect x="195" y="254" width="10" height="12" rx="1" fill="white"/>
+                    <circle cx="230" cy="260" r="14" fill="#e8e8ed"/>
+                    <polygon points="224,254 224,266 236,260" fill="#86868b"/>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">FocusTimer</p>
+                <p class="desc">A Pomodoro-style study timer with session tracking and break reminders.</p>
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 5: Markdown Notes -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#f0fff0"/>
+                    <!-- Split view panels -->
+                    <rect x="45" y="40" width="150" height="220" rx="8" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
+                    <rect x="205" y="40" width="150" height="220" rx="8" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
+                    <!-- Left panel - markdown -->
+                    <text x="55" y="65" font-family="monospace" font-size="9" fill="#86868b"># Notes</text>
+                    <text x="55" y="82" font-family="monospace" font-size="8" fill="#1d1d1f">## Week 5</text>
+                    <text x="55" y="97" font-family="monospace" font-size="8" fill="#6e6e73">- arrays and loops</text>
+                    <text x="55" y="112" font-family="monospace" font-size="8" fill="#6e6e73">- **linked lists**</text>
+                    <text x="55" y="127" font-family="monospace" font-size="8" fill="#6e6e73">- recursion basics</text>
+                    <text x="55" y="150" font-family="monospace" font-size="8" fill="#1d1d1f">## Week 6</text>
+                    <text x="55" y="165" font-family="monospace" font-size="8" fill="#6e6e73">- trees and graphs</text>
+                    <text x="55" y="180" font-family="monospace" font-size="8" fill="#6e6e73">- BFS / DFS</text>
+                    <text x="55" y="195" font-family="monospace" font-size="8" fill="#0071e3">```python</text>
+                    <text x="55" y="210" font-family="monospace" font-size="8" fill="#34c759">def traverse(node):</text>
+                    <text x="55" y="225" font-family="monospace" font-size="8" fill="#6e6e73">  if not node:</text>
+                    <text x="55" y="240" font-family="monospace" font-size="8" fill="#6e6e73">    return</text>
+                    <!-- Right panel - rendered -->
+                    <text x="215" y="65" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1d1d1f">Notes</text>
+                    <text x="215" y="85" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#1d1d1f">Week 5</text>
+                    <circle cx="220" cy="97" r="2" fill="#1d1d1f"/>
+                    <text x="228" y="100" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">arrays and loops</text>
+                    <circle cx="220" cy="112" r="2" fill="#1d1d1f"/>
+                    <text x="228" y="115" font-family="Inter, sans-serif" font-weight="700" font-size="8" fill="#6e6e73">linked lists</text>
+                    <circle cx="220" cy="127" r="2" fill="#1d1d1f"/>
+                    <text x="228" y="130" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">recursion basics</text>
+                    <text x="215" y="155" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#1d1d1f">Week 6</text>
+                    <circle cx="220" cy="167" r="2" fill="#1d1d1f"/>
+                    <text x="228" y="170" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">trees and graphs</text>
+                    <circle cx="220" cy="182" r="2" fill="#1d1d1f"/>
+                    <text x="228" y="185" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">BFS / DFS</text>
+                    <!-- Code block -->
+                    <rect x="215" y="195" width="128" height="45" rx="4" fill="#f5f5f7"/>
+                    <text x="222" y="210" font-family="monospace" font-size="8" fill="#34c759">def traverse(node):</text>
+                    <text x="222" y="225" font-family="monospace" font-size="8" fill="#6e6e73">  if not node:</text>
+                    <!-- Divider label -->
+                    <text x="120" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#86868b">EDIT</text>
+                    <text x="280" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#86868b">PREVIEW</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">QuickNote</p>
+                <p class="desc">A split-view Markdown note-taking app with live preview and syntax highlighting.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Markdown</span>
+                    <span>HTML</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 6: Game -->
+        <a class="project-card" href="#">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#1d1d1f"/>
+                    <!-- Stars -->
+                    <circle cx="50" cy="30" r="1.5" fill="white" opacity="0.6"/>
+                    <circle cx="120" cy="55" r="1" fill="white" opacity="0.4"/>
+                    <circle cx="300" cy="40" r="1.5" fill="white" opacity="0.5"/>
+                    <circle cx="350" cy="80" r="1" fill="white" opacity="0.3"/>
+                    <circle cx="80" cy="100" r="1" fill="white" opacity="0.5"/>
+                    <circle cx="250" cy="25" r="1.5" fill="white" opacity="0.4"/>
+                    <circle cx="180" cy="45" r="1" fill="white" opacity="0.6"/>
+                    <circle cx="330" cy="130" r="1" fill="white" opacity="0.4"/>
+                    <!-- Player ship -->
+                    <polygon points="200,180 185,210 200,200 215,210" fill="#0071e3"/>
+                    <polygon points="200,185 192,205 200,198 208,205" fill="#4fc3f7"/>
+                    <!-- Engine glow -->
+                    <ellipse cx="200" cy="212" rx="5" ry="8" fill="#ff9f0a" opacity="0.6"/>
+                    <!-- Enemies -->
+                    <rect x="80" y="70" width="24" height="18" rx="4" fill="#ff453a"/>
+                    <rect x="84" y="75" width="4" height="4" fill="#1d1d1f"/>
+                    <rect x="96" y="75" width="4" height="4" fill="#1d1d1f"/>
+                    <rect x="160" y="55" width="24" height="18" rx="4" fill="#ff453a"/>
+                    <rect x="164" y="60" width="4" height="4" fill="#1d1d1f"/>
+                    <rect x="176" y="60" width="4" height="4" fill="#1d1d1f"/>
+                    <rect x="270" y="80" width="24" height="18" rx="4" fill="#ff453a"/>
+                    <rect x="274" y="85" width="4" height="4" fill="#1d1d1f"/>
+                    <rect x="286" y="85" width="4" height="4" fill="#1d1d1f"/>
+                    <!-- Bullet -->
+                    <rect x="198" y="160" width="4" height="12" rx="2" fill="#4fc3f7"/>
+                    <!-- HUD -->
+                    <text x="30" y="25" font-family="monospace" font-size="10" fill="#28c840">SCORE: 4200</text>
+                    <text x="310" y="25" font-family="monospace" font-size="10" fill="#ff453a">HP: |||</text>
+                    <!-- Ground line -->
+                    <line x1="0" y1="275" x2="400" y2="275" stroke="#3a3a3c" stroke-width="1"/>
+                    <text x="200" y="292" text-anchor="middle" font-family="monospace" font-size="9" fill="#86868b">WAVE 3</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">Space Blaster</p>
+                <p class="desc">A retro space shooter built with HTML5 Canvas. Waves, power-ups, and high scores.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Canvas</span>
+                    <span>Game</span>
+                </div>
+            </div>
+        </a>
+
+    </section>
+</body>
+</html>
