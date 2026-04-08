@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Amir Tomashpayev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a.back {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a.back:hover { color: #0077ed; }
+
+        nav .nav-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        nav .spacer { width: 60px; }
+
+        .page-header {
+            text-align: center;
+            padding: 7rem 2rem 3rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #86868b;
+        }
+
+        .article-list {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: fadeUp 0.8s ease-out both;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .article-card:nth-child(2) { animation-delay: 0.1s; }
+        .article-card:nth-child(3) { animation-delay: 0.2s; }
+        .article-card:nth-child(4) { animation-delay: 0.3s; }
+        .article-card:nth-child(5) { animation-delay: 0.4s; }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-date {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #86868b;
+        }
+
+        .article-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #c7c7cc;
+        }
+
+        .article-read-time {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #86868b;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #6e6e73;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .article-tags span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background: #f5f5f7;
+            color: #86868b;
+        }
+
+        .read-more {
+            font-size: 0.8rem;
+            color: #0071e3;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .read-more svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .read-more svg {
+            transform: translateX(3px);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .article-list {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .article-card {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="back">&lsaquo; Home</a>
+        <span class="nav-title">Articles</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <header class="page-header">
+        <h1>Articles.</h1>
+        <p>Thoughts on CS, math, building things, and college life.</p>
+    </header>
+
+    <section class="article-list">
+
+        <a class="article-card" href="articles/why-i-rebuilt-my-site.html">
+            <div class="article-meta">
+                <span class="article-date">April 8, 2026</span>
+                <span class="article-dot"></span>
+                <span class="article-read-time">4 min read</span>
+            </div>
+            <h2 class="article-title">Why I Rebuilt My Personal Site from Scratch</h2>
+            <p class="article-excerpt">Sometimes the best way to learn is to start over. I ditched the frameworks and went back to plain HTML and CSS. Here's what I learned about keeping things simple.</p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span>Web Dev</span>
+                    <span>Design</span>
+                </div>
+                <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+        <a class="article-card" href="articles/data-structures.html">
+            <div class="article-meta">
+                <span class="article-date">March 22, 2026</span>
+                <span class="article-dot"></span>
+                <span class="article-read-time">6 min read</span>
+            </div>
+            <h2 class="article-title">Data Structures Aren't Scary (I Promise)</h2>
+            <p class="article-excerpt">Linked lists, trees, graphs -- they sound intimidating but they're just patterns. Here's how I finally stopped being afraid of whiteboard problems.</p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span>CS</span>
+                    <span>Learning</span>
+                </div>
+                <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+        <a class="article-card" href="articles/productivity-setup.html">
+            <div class="article-meta">
+                <span class="article-date">March 5, 2026</span>
+                <span class="article-dot"></span>
+                <span class="article-read-time">5 min read</span>
+            </div>
+            <h2 class="article-title">My Setup for Staying Productive in College</h2>
+            <p class="article-excerpt">Between classes, projects, and trying to have a social life, staying organized is hard. Here are the tools and habits that actually work for me.</p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span>Productivity</span>
+                    <span>College</span>
+                </div>
+                <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+        <a class="article-card" href="articles/hands-on-ml.html">
+            <div class="article-meta">
+                <span class="article-date">February 14, 2026</span>
+                <span class="article-dot"></span>
+                <span class="article-read-time">7 min read</span>
+            </div>
+            <h2 class="article-title">My Journey Through Hands-On Machine Learning</h2>
+            <p class="article-excerpt">I'm working through Aurelien Geron's Hands-On ML book. Here's what I've learned so far about scikit-learn, neural networks, and why math actually matters.</p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span>Machine Learning</span>
+                    <span>Python</span>
+                </div>
+                <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+        <a class="article-card" href="articles/first-semester-recap.html">
+            <div class="article-meta">
+                <span class="article-date">January 20, 2026</span>
+                <span class="article-dot"></span>
+                <span class="article-read-time">5 min read</span>
+            </div>
+            <h2 class="article-title">First Semester Recap: What They Don't Tell You</h2>
+            <p class="article-excerpt">Fundamentals of Computing was just the beginning. Here are the real lessons I picked up during my first semester at Notre Dame -- the stuff that's not in the syllabus.</p>
+            <div class="article-footer">
+                <div class="article-tags">
+                    <span>College</span>
+                    <span>Reflection</span>
+                </div>
+                <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </a>
+
+    </section>
+</body>
+</html>
