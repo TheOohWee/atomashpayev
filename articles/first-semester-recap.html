@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Semester Recap - Amir Tomashpayev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa; color: #1d1d1f; min-height: 100vh;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        nav a.back { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.3s; }
+        nav a.back:hover { color: #0077ed; }
+        nav .nav-title { font-size: 0.85rem; font-weight: 600; color: #1d1d1f; }
+        nav .spacer { width: 60px; }
+
+        .article { max-width: 680px; margin: 0 auto; padding: 7rem 2rem 4rem; animation: fadeUp 0.8s ease-out; }
+        .article-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+        .article-tags { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+        .article-tags span { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px; background: #e3f2fd; color: #1e88e5; }
+        .article-header h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1rem; color: #1d1d1f; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; color: #86868b; font-size: 0.85rem; }
+        .article-meta img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .meta-text { display: flex; flex-direction: column; gap: 0.1rem; }
+        .meta-author { font-weight: 500; color: #1d1d1f; font-size: 0.85rem; }
+        .meta-details { font-size: 0.8rem; color: #86868b; }
+
+        .article-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #1d1d1f; }
+        .article-body blockquote { border-left: 3px solid #0071e3; padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: #f5f5f7; border-radius: 0 8px 8px 0; font-style: italic; color: #6e6e73; }
+        .article-body ul { margin: 0 0 1.5rem 1.5rem; line-height: 2; }
+
+        .article-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0, 0, 0, 0.06); text-align: center; }
+        .article-footer a { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 640px) { .article { padding: 6rem 1.25rem 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../articles.html" class="back">&lsaquo; Articles</a>
+        <span class="nav-title">Article</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="article-tags">
+                <span>College</span>
+                <span>Reflection</span>
+            </div>
+            <h1>First Semester Recap: What They Don't Tell You</h1>
+            <div class="article-meta">
+                <img src="../assets/profile.jpg" alt="Amir">
+                <div class="meta-text">
+                    <span class="meta-author">Amir Tomashpayev</span>
+                    <span class="meta-details">January 20, 2026 &middot; 5 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-body">
+            <p>I just finished my first semester at Notre Dame studying CS and Math, and I have thoughts. Not the usual "college is amazing" stuff (it is), but the things nobody warned me about.</p>
+
+            <h2>The Pace Is Different</h2>
+            <p>High school felt like a marathon at a jogging pace. College is a sprint that lasts four months. In Fundamentals of Computing (CSE 20311), we went from basic C programming to implementing Conway's Game of Life with animations in about eight weeks. The learning curve isn't steep -- it's a cliff. But in a good way.</p>
+
+            <p>The key insight: you have to be okay with not understanding everything immediately. In high school, I could master every concept before the exam. Here, sometimes you're still piecing things together during the exam. And that's normal.</p>
+
+            <h2>Office Hours Are Everything</h2>
+            <p>I was the kid who never went to office hours in high school because I thought it meant I wasn't smart enough. Biggest misconception ever. The smartest students I know are the ones who show up to office hours every week. Not because they're struggling, but because direct conversations with professors unlock understanding that lectures can't.</p>
+
+            <blockquote>The real curriculum isn't in the syllabus. It's in the conversations you have outside of class.</blockquote>
+
+            <h2>Find Your People</h2>
+            <p>The best thing about Notre Dame's CS program is the community. Finding a group of people who are excited about the same things -- algorithms, building projects, debating whether Python or C is better (it's C, obviously) -- makes the hard parts bearable and the good parts great.</p>
+
+            <p>I also got involved with CodePath, which has been incredible for structured learning and connecting with tech folks beyond campus. Having mentorship and a community that extends outside your university is invaluable.</p>
+
+            <h2>What Actually Helped</h2>
+            <ul>
+                <li><strong>Start assignments early.</strong> Not because you'll finish early, but because you'll have time to get stuck, ask questions, and try again.</li>
+                <li><strong>Write code every day.</strong> Even 30 minutes of practice keeps the momentum going.</li>
+                <li><strong>Take care of yourself.</strong> I play soccer, do breakdancing, and make time for deep conversations with friends. These aren't distractions from academics -- they're what makes academics sustainable.</li>
+                <li><strong>Build side projects.</strong> The stuff I learned building things on my own taught me more than any single class.</li>
+            </ul>
+
+            <h2>Looking Ahead</h2>
+            <p>Next semester brings Data Structures, Systems Programming, and Discrete Math. I'm nervous and excited in equal measure. But after surviving the first semester, I know the formula: show up, put in the work, ask for help, and don't forget to have fun along the way.</p>
+
+            <p>If you're about to start your first semester in CS -- you've got this. It's going to be harder and better than you expect.</p>
+        </div>
+
+        <div class="article-footer">
+            <a href="../articles.html">&larr; Back to all articles</a>
+        </div>
+    </article>
+</body>
+</html>

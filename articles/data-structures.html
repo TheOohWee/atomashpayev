@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Aren't Scary - Amir Tomashpayev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+        }
+
+        nav a.back { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.3s; }
+        nav a.back:hover { color: #0077ed; }
+        nav .nav-title { font-size: 0.85rem; font-weight: 600; color: #1d1d1f; }
+        nav .spacer { width: 60px; }
+
+        .article { max-width: 680px; margin: 0 auto; padding: 7rem 2rem 4rem; animation: fadeUp 0.8s ease-out; }
+
+        .article-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+        .article-tags { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+        .article-tags span { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px; background: #e8f5e9; color: #43a047; }
+        .article-header h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1rem; color: #1d1d1f; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; color: #86868b; font-size: 0.85rem; }
+        .article-meta img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .meta-text { display: flex; flex-direction: column; gap: 0.1rem; }
+        .meta-author { font-weight: 500; color: #1d1d1f; font-size: 0.85rem; }
+        .meta-details { font-size: 0.8rem; color: #86868b; }
+
+        .article-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #1d1d1f; }
+        .article-body blockquote { border-left: 3px solid #0071e3; padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: #f5f5f7; border-radius: 0 8px 8px 0; font-style: italic; color: #6e6e73; }
+        .article-body code { background: #f5f5f7; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9rem; font-family: 'SF Mono', Monaco, monospace; }
+        .article-body ul { margin: 0 0 1.5rem 1.5rem; line-height: 2; }
+
+        .article-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0, 0, 0, 0.06); text-align: center; }
+        .article-footer a { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 640px) { .article { padding: 6rem 1.25rem 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../articles.html" class="back">&lsaquo; Articles</a>
+        <span class="nav-title">Article</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="article-tags">
+                <span>CS</span>
+                <span>Learning</span>
+            </div>
+            <h1>Data Structures Aren't Scary (I Promise)</h1>
+            <div class="article-meta">
+                <img src="../assets/profile.jpg" alt="Amir">
+                <div class="meta-text">
+                    <span class="meta-author">Amir Tomashpayev</span>
+                    <span class="meta-details">March 22, 2026 &middot; 6 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-body">
+            <p>When I first heard the words "linked list" in my Data Structures course, my immediate thought was: <em>this sounds like something I'll never understand.</em> Fast forward a few months, and I can tell you with confidence -- data structures are just patterns. Once you see the pattern, the fear goes away.</p>
+
+            <h2>The Mental Shift</h2>
+            <p>The biggest hurdle isn't the material itself -- it's the mindset. We hear "binary tree" or "hash map" and imagine some impossibly complex system. But a binary tree is just a node that points to two other nodes. A hash map is just an array with a clever indexing trick. That's it.</p>
+
+            <blockquote>Every complex data structure is just a simple idea applied recursively.</blockquote>
+
+            <h2>How I Study Them</h2>
+            <p>After trying flashcards, watching YouTube videos, and reading textbooks, here's what actually works for me:</p>
+
+            <ul>
+                <li><strong>Draw it out.</strong> Every time. Grab a whiteboard or a piece of paper and trace through the operations step by step.</li>
+                <li><strong>Implement from scratch.</strong> Don't just read the pseudocode -- write the actual code. In C, if you can. Pointers will teach you more about memory than any lecture.</li>
+                <li><strong>Solve problems.</strong> Not a hundred problems -- just a few good ones for each structure. Quality over quantity.</li>
+                <li><strong>Teach someone else.</strong> If you can explain a red-black tree to your roommate, you understand it.</li>
+            </ul>
+
+            <h2>The Ones That Tripped Me Up</h2>
+            <p>Graphs were the hardest for me. Not because the concept is hard -- nodes connected by edges, simple enough -- but because there are so many ways to traverse and search them. BFS vs DFS, adjacency lists vs matrices, directed vs undirected. The key was implementing Conway's Game of Life for my Fundamentals of Computing lab. Seeing cells interact on a grid made graph-like thinking click.</p>
+
+            <p>Recursion was another beast. The trick that helped me: trust the recursion. Write the base case, write the recursive case, and <em>trust</em> that the function will do its job. Don't try to trace every call in your head.</p>
+
+            <h2>Why It Matters</h2>
+            <p>I used to think data structures were just academic exercises. Then I started building real projects and realized: choosing the right data structure is the difference between code that works and code that works <em>well</em>. A hash map lookup is O(1). A linear search through an array is O(n). When you're processing thousands of items, that difference matters.</p>
+
+            <p>If you're a student just starting out with data structures, hang in there. It gets easier. And once it clicks, you'll start seeing these patterns everywhere.</p>
+        </div>
+
+        <div class="article-footer">
+            <a href="../articles.html">&larr; Back to all articles</a>
+        </div>
+    </article>
+</body>
+</html>
