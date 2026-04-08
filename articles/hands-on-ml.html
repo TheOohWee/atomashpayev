@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey Through Hands-On Machine Learning - Amir Tomashpayev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa; color: #1d1d1f; min-height: 100vh;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+        }
+        nav a.back { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.3s; }
+        nav a.back:hover { color: #0077ed; }
+        nav .nav-title { font-size: 0.85rem; font-weight: 600; color: #1d1d1f; }
+        nav .spacer { width: 60px; }
+
+        .article { max-width: 680px; margin: 0 auto; padding: 7rem 2rem 4rem; animation: fadeUp 0.8s ease-out; }
+        .article-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+        .article-tags { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+        .article-tags span { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px; background: #fce4ec; color: #e91e63; }
+        .article-header h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1rem; color: #1d1d1f; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; color: #86868b; font-size: 0.85rem; }
+        .article-meta img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .meta-text { display: flex; flex-direction: column; gap: 0.1rem; }
+        .meta-author { font-weight: 500; color: #1d1d1f; font-size: 0.85rem; }
+        .meta-details { font-size: 0.8rem; color: #86868b; }
+
+        .article-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #1d1d1f; }
+        .article-body blockquote { border-left: 3px solid #0071e3; padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: #f5f5f7; border-radius: 0 8px 8px 0; font-style: italic; color: #6e6e73; }
+        .article-body code { background: #f5f5f7; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9rem; font-family: 'SF Mono', Monaco, monospace; }
+        .article-body ul { margin: 0 0 1.5rem 1.5rem; line-height: 2; }
+
+        .article-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0, 0, 0, 0.06); text-align: center; }
+        .article-footer a { color: #0071e3; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 640px) { .article { padding: 6rem 1.25rem 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../articles.html" class="back">&lsaquo; Articles</a>
+        <span class="nav-title">Article</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="article-tags">
+                <span>Machine Learning</span>
+                <span>Python</span>
+            </div>
+            <h1>My Journey Through Hands-On Machine Learning</h1>
+            <div class="article-meta">
+                <img src="../assets/profile.jpg" alt="Amir">
+                <div class="meta-text">
+                    <span class="meta-author">Amir Tomashpayev</span>
+                    <span class="meta-details">February 14, 2026 &middot; 7 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-body">
+            <p>A few months ago, I picked up <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em> by Aurelien Geron. I'd heard it was the best practical ML book out there, and after working through most of it, I can confirm -- it lives up to the hype.</p>
+
+            <h2>Why This Book</h2>
+            <p>I wanted to learn ML properly. Not just watching YouTube tutorials and copy-pasting code, but actually understanding what's happening under the hood. Why does gradient descent work? What makes a random forest "random"? When should you use an SVM vs a neural network?</p>
+
+            <p>Geron's book strikes the perfect balance between theory and practice. Every concept comes with runnable Jupyter notebooks, and the explanations build on each other in a way that makes complex ideas feel approachable.</p>
+
+            <h2>The Scikit-Learn Chapters</h2>
+            <p>The first part of the book covers classical ML with scikit-learn: linear regression, decision trees, SVMs, ensemble methods. This was where I had the most "aha" moments. Things I'd heard about but never truly understood suddenly clicked.</p>
+
+            <blockquote>The difference between knowing the name of a model and understanding how it works is the difference between using a tool and being a craftsman.</blockquote>
+
+            <p>The housing price prediction project in Chapter 2 was a turning point for me. Going through a complete ML pipeline -- data cleaning, feature engineering, model selection, hyperparameter tuning -- gave me a framework I now apply to every project.</p>
+
+            <h2>Into Deep Learning</h2>
+            <p>The deep learning chapters with Keras and TensorFlow are where things get intense. Building neural networks from scratch, understanding backpropagation, implementing CNNs and RNNs -- it's a lot to take in. My approach was to:</p>
+
+            <ul>
+                <li>Read the chapter once for the big picture</li>
+                <li>Work through the notebooks, tweaking parameters</li>
+                <li>Re-read the math sections with pen and paper</li>
+                <li>Try applying the technique to a different dataset</li>
+            </ul>
+
+            <h2>What Math Actually Matters</h2>
+            <p>Here's the thing nobody tells you: you don't need to be a math genius to do ML. But you do need to be comfortable with linear algebra (matrix operations, dot products), calculus (derivatives, chain rule), and probability (Bayes' theorem, distributions). My math classes at Notre Dame have been incredibly useful here -- all those proofs in Discrete Math and Calculus weren't for nothing.</p>
+
+            <h2>What's Next</h2>
+            <p>I'm currently working on a Kaggle competition to put these skills to the test. There's a huge gap between following along in a textbook and building something on your own with messy real-world data. That's where the real learning happens.</p>
+
+            <p>If you're interested in ML and come from a CS + Math background, this book is the best starting point I've found. Fork my <code>handson-ml3</code> repo on GitHub if you want to see my notes and modified notebooks.</p>
+        </div>
+
+        <div class="article-footer">
+            <a href="../articles.html">&larr; Back to all articles</a>
+        </div>
+    </article>
+</body>
+</html>
