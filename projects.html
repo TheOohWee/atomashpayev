@@ -189,8 +189,96 @@
 
     <section class="project-grid">
 
-        <!-- Project 1: Personal Website -->
-        <a class="project-card" href="#">
+        <!-- Project 1: WattsUp (YHack 2026) -->
+        <a class="project-card" href="https://github.com/TheOohWee/YHack-2026" target="_blank" rel="noopener">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="wattsBg" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff8e1"/>
+                            <stop offset="100%" stop-color="#e8f5e9"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="300" fill="url(#wattsBg)"/>
+                    <!-- Phone-style card -->
+                    <rect x="80" y="40" width="240" height="220" rx="18" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
+                    <!-- Header -->
+                    <text x="100" y="68" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#86868b">TODAY'S USAGE</text>
+                    <text x="100" y="98" font-family="Inter, sans-serif" font-weight="600" font-size="26" fill="#1d1d1f">12.4 kWh</text>
+                    <text x="100" y="115" font-family="Inter, sans-serif" font-size="10" fill="#43a047">↓ 18% vs yesterday</text>
+                    <!-- Lightning bolt -->
+                    <polygon points="270,55 250,105 270,105 255,150 290,90 270,90 285,55" fill="#fbc02d" stroke="#f57f17" stroke-width="1.5" stroke-linejoin="round"/>
+                    <!-- Usage chart -->
+                    <line x1="100" y1="220" x2="300" y2="220" stroke="#e8e8ed" stroke-width="1"/>
+                    <rect x="105" y="190" width="14" height="30" rx="2" fill="#a5d6a7"/>
+                    <rect x="125" y="175" width="14" height="45" rx="2" fill="#81c784"/>
+                    <rect x="145" y="160" width="14" height="60" rx="2" fill="#66bb6a"/>
+                    <rect x="165" y="150" width="14" height="70" rx="2" fill="#4caf50"/>
+                    <rect x="185" y="170" width="14" height="50" rx="2" fill="#66bb6a"/>
+                    <rect x="205" y="155" width="14" height="65" rx="2" fill="#4caf50"/>
+                    <rect x="225" y="180" width="14" height="40" rx="2" fill="#81c784"/>
+                    <rect x="245" y="195" width="14" height="25" rx="2" fill="#a5d6a7"/>
+                    <rect x="265" y="185" width="14" height="35" rx="2" fill="#81c784"/>
+                    <rect x="285" y="200" width="14" height="20" rx="2" fill="#c8e6c9"/>
+                    <text x="100" y="245" font-family="Inter, sans-serif" font-size="9" fill="#86868b">Powered by K2 Think V2</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">WattsUp</p>
+                <p class="desc">Smart energy advisor built at YHack 2026 — recommends habit changes to cut your electric bill. K2 Think V2, MongoDB Atlas, Supabase, Next.js.</p>
+                <div class="project-tags">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>MongoDB</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 2: Grokking Algorithms -->
+        <a class="project-card" href="https://github.com/TheOohWee/grokking_algorithms" target="_blank" rel="noopener">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#e3f2fd"/>
+                    <!-- Graph edges -->
+                    <line x1="200" y1="80" x2="120" y2="150" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <line x1="200" y1="80" x2="280" y2="150" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <line x1="120" y1="150" x2="80" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <line x1="120" y1="150" x2="180" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <line x1="280" y1="150" x2="240" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <line x1="280" y1="150" x2="320" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
+                    <!-- Highlighted shortest path -->
+                    <line x1="200" y1="80" x2="120" y2="150" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="120" y1="150" x2="180" y2="220" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Nodes -->
+                    <circle cx="200" cy="80" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
+                    <text x="200" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">A</text>
+                    <circle cx="120" cy="150" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
+                    <text x="120" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">B</text>
+                    <circle cx="280" cy="150" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
+                    <text x="280" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">C</text>
+                    <circle cx="80" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
+                    <text x="80" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">D</text>
+                    <circle cx="180" cy="220" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
+                    <text x="180" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">E</text>
+                    <circle cx="240" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
+                    <text x="240" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">F</text>
+                    <circle cx="320" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
+                    <text x="320" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">G</text>
+                    <text x="200" y="270" text-anchor="middle" font-family="monospace" font-size="11" fill="#1565c0">BFS shortest path</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">Grokking Algorithms</p>
+                <p class="desc">Worked examples from "Grokking Algorithms" — search, sorting, recursion, hash tables, graphs, and dynamic programming.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Algorithms</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 3: Personal Website -->
+        <a class="project-card" href="https://github.com/TheOohWee/atomashpayev" target="_blank" rel="noopener">
             <div class="project-image">
                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="300" fill="#f0f4ff"/>
@@ -218,7 +306,7 @@
             </div>
             <div class="project-text">
                 <p class="title">Personal Website</p>
-                <p class="desc">This very site! A minimal, Apple-inspired personal portfolio and blog.</p>
+                <p class="desc">This very site! A minimal, Apple-inspired personal portfolio and blog — hand-written HTML, CSS, and SVG.</p>
                 <div class="project-tags">
                     <span>HTML</span>
                     <span>CSS</span>
@@ -227,8 +315,69 @@
             </div>
         </a>
 
-        <!-- Project 2: CLI Tool -->
-        <a class="project-card" href="#">
+        <!-- Project 4: Hands-On ML -->
+        <a class="project-card" href="https://github.com/TheOohWee/handson-ml3" target="_blank" rel="noopener">
+            <div class="project-image">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#fff3e0"/>
+                    <!-- Neural net: layers of nodes -->
+                    <!-- Edges layer 1 -> 2 -->
+                    <g stroke="#ff9800" stroke-width="1" opacity="0.4">
+                        <line x1="90" y1="80" x2="200" y2="70"/>
+                        <line x1="90" y1="80" x2="200" y2="120"/>
+                        <line x1="90" y1="80" x2="200" y2="170"/>
+                        <line x1="90" y1="80" x2="200" y2="220"/>
+                        <line x1="90" y1="150" x2="200" y2="70"/>
+                        <line x1="90" y1="150" x2="200" y2="120"/>
+                        <line x1="90" y1="150" x2="200" y2="170"/>
+                        <line x1="90" y1="150" x2="200" y2="220"/>
+                        <line x1="90" y1="220" x2="200" y2="70"/>
+                        <line x1="90" y1="220" x2="200" y2="120"/>
+                        <line x1="90" y1="220" x2="200" y2="170"/>
+                        <line x1="90" y1="220" x2="200" y2="220"/>
+                    </g>
+                    <!-- Edges layer 2 -> 3 -->
+                    <g stroke="#ff9800" stroke-width="1" opacity="0.4">
+                        <line x1="200" y1="70" x2="310" y2="110"/>
+                        <line x1="200" y1="70" x2="310" y2="180"/>
+                        <line x1="200" y1="120" x2="310" y2="110"/>
+                        <line x1="200" y1="120" x2="310" y2="180"/>
+                        <line x1="200" y1="170" x2="310" y2="110"/>
+                        <line x1="200" y1="170" x2="310" y2="180"/>
+                        <line x1="200" y1="220" x2="310" y2="110"/>
+                        <line x1="200" y1="220" x2="310" y2="180"/>
+                    </g>
+                    <!-- Layer 1 -->
+                    <circle cx="90" cy="80" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="90" cy="150" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="90" cy="220" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
+                    <!-- Layer 2 -->
+                    <circle cx="200" cy="70" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="200" cy="120" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="200" cy="170" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="200" cy="220" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+                    <!-- Layer 3 -->
+                    <circle cx="310" cy="110" r="14" fill="#fb8c00" stroke="#e65100" stroke-width="2"/>
+                    <circle cx="310" cy="180" r="14" fill="#fb8c00" stroke="#e65100" stroke-width="2"/>
+                    <!-- Labels -->
+                    <text x="90" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">input</text>
+                    <text x="200" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">hidden</text>
+                    <text x="310" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">output</text>
+                </svg>
+            </div>
+            <div class="project-text">
+                <p class="title">Hands-On ML Notes</p>
+                <p class="desc">My notes and notebooks working through "Hands-On Machine Learning" — scikit-learn, Keras, and TensorFlow 2.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Jupyter</span>
+                    <span>TensorFlow</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 5: GPT from Scratch -->
+        <a class="project-card" href="https://github.com/TheOohWee/CSE-10124-LAB-4" target="_blank" rel="noopener">
             <div class="project-image">
                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="300" fill="#1d1d1f"/>
@@ -241,164 +390,32 @@
                     <circle cx="72" cy="49" r="4" fill="#febc2e"/>
                     <circle cx="86" cy="49" r="4" fill="#28c840"/>
                     <!-- Terminal text -->
-                    <text x="55" y="85" font-family="monospace" font-size="11" fill="#28c840">$</text>
-                    <text x="68" y="85" font-family="monospace" font-size="11" fill="#e8e8ed">python taskmaster.py</text>
-                    <text x="55" y="105" font-family="monospace" font-size="11" fill="#86868b">Loading tasks...</text>
-                    <text x="55" y="125" font-family="monospace" font-size="11" fill="#0071e3">[1]</text>
-                    <text x="85" y="125" font-family="monospace" font-size="11" fill="#e8e8ed">Finish homework</text>
-                    <text x="270" y="125" font-family="monospace" font-size="11" fill="#febc2e">pending</text>
-                    <text x="55" y="145" font-family="monospace" font-size="11" fill="#0071e3">[2]</text>
-                    <text x="85" y="145" font-family="monospace" font-size="11" fill="#e8e8ed">Build project</text>
-                    <text x="270" y="145" font-family="monospace" font-size="11" fill="#28c840">done</text>
-                    <text x="55" y="165" font-family="monospace" font-size="11" fill="#0071e3">[3]</text>
-                    <text x="85" y="165" font-family="monospace" font-size="11" fill="#e8e8ed">Touch grass</text>
-                    <text x="270" y="165" font-family="monospace" font-size="11" fill="#febc2e">pending</text>
-                    <text x="55" y="195" font-family="monospace" font-size="11" fill="#28c840">$</text>
-                    <text x="68" y="195" font-family="monospace" font-size="11" fill="#e8e8ed">_</text>
+                    <text x="55" y="85" font-family="monospace" font-size="10" fill="#28c840">$</text>
+                    <text x="68" y="85" font-family="monospace" font-size="10" fill="#e8e8ed">python sample.py --model gpt2</text>
+                    <text x="55" y="105" font-family="monospace" font-size="10" fill="#86868b">step 5000  loss=1.42</text>
+                    <text x="55" y="130" font-family="monospace" font-size="10" fill="#4fc3f7">ROMEO:</text>
+                    <text x="55" y="148" font-family="monospace" font-size="10" fill="#e8e8ed">But soft, what light through</text>
+                    <text x="55" y="163" font-family="monospace" font-size="10" fill="#e8e8ed">yonder window breaks?</text>
+                    <text x="55" y="178" font-family="monospace" font-size="10" fill="#e8e8ed">It is the east, and Juliet</text>
+                    <text x="55" y="193" font-family="monospace" font-size="10" fill="#e8e8ed">is the sun.</text>
+                    <text x="55" y="218" font-family="monospace" font-size="10" fill="#4fc3f7">JULIET:</text>
+                    <text x="55" y="236" font-family="monospace" font-size="10" fill="#e8e8ed">O Romeo, Romeo, wherefore</text>
+                    <text x="55" y="251" font-family="monospace" font-size="10" fill="#e8e8ed">art thou_</text>
                 </svg>
             </div>
             <div class="project-text">
-                <p class="title">TaskMaster CLI</p>
-                <p class="desc">A command-line task manager with color-coded priorities and deadline tracking.</p>
+                <p class="title">GPT from Scratch</p>
+                <p class="desc">Implemented the GPT-2 transformer architecture from scratch and trained it on Shakespeare. Final lab for CSE 10124: Building ChatGPT.</p>
                 <div class="project-tags">
-                    <span>Python</span>
-                    <span>CLI</span>
+                    <span>PyTorch</span>
+                    <span>Transformers</span>
+                    <span>NLP</span>
                 </div>
             </div>
         </a>
 
-        <!-- Project 3: Weather App -->
-        <a class="project-card" href="#">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#e3f2fd"/>
-                    <!-- Phone frame -->
-                    <rect x="140" y="25" width="120" height="250" rx="18" fill="#1d1d1f"/>
-                    <rect x="146" y="40" width="108" height="220" rx="4" fill="linear-gradient(180deg, #4fc3f7, #0288d1)"/>
-                    <rect x="146" y="40" width="108" height="220" rx="4" fill="#4fc3f7"/>
-                    <!-- Notch -->
-                    <rect x="175" y="25" width="50" height="12" rx="6" fill="#1d1d1f"/>
-                    <!-- Sun -->
-                    <circle cx="200" cy="90" r="22" fill="#ffca28"/>
-                    <circle cx="200" cy="90" r="18" fill="#ffd54f"/>
-                    <!-- Cloud -->
-                    <ellipse cx="215" cy="115" rx="22" ry="12" fill="white" opacity="0.9"/>
-                    <ellipse cx="205" cy="110" rx="14" ry="10" fill="white" opacity="0.9"/>
-                    <!-- Temperature -->
-                    <text x="200" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-weight="300" font-size="28" fill="white">72°</text>
-                    <text x="200" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="white" opacity="0.8">Mostly Sunny</text>
-                    <!-- Stats row -->
-                    <text x="165" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">HUMIDITY</text>
-                    <text x="165" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">45%</text>
-                    <text x="200" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">WIND</text>
-                    <text x="200" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">8mph</text>
-                    <text x="235" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" opacity="0.7">UV</text>
-                    <text x="235" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="white">6</text>
-                    <!-- Home indicator -->
-                    <rect x="180" y="252" width="40" height="4" rx="2" fill="white" opacity="0.5"/>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">WeatherNow</p>
-                <p class="desc">A clean weather app with real-time forecasts and a minimal UI.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>API</span>
-                    <span>CSS</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Project 4: Study Timer -->
-        <a class="project-card" href="#">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#fce4ec"/>
-                    <!-- Timer circle -->
-                    <circle cx="200" cy="145" r="85" fill="none" stroke="#e8e8ed" stroke-width="8"/>
-                    <circle cx="200" cy="145" r="85" fill="none" stroke="#ff453a" stroke-width="8" stroke-dasharray="400 534" stroke-linecap="round" transform="rotate(-90 200 145)"/>
-                    <!-- Inner circle -->
-                    <circle cx="200" cy="145" r="72" fill="white" opacity="0.5"/>
-                    <!-- Time display -->
-                    <text x="200" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-weight="300" font-size="36" fill="#1d1d1f">18:42</text>
-                    <text x="200" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" fill="#ff453a">FOCUS TIME</text>
-                    <!-- Controls -->
-                    <circle cx="170" cy="260" r="14" fill="#e8e8ed"/>
-                    <rect x="165" y="254" width="4" height="12" rx="1" fill="#86868b"/>
-                    <rect x="172" y="254" width="4" height="12" rx="1" fill="#86868b"/>
-                    <circle cx="200" cy="260" r="14" fill="#ff453a"/>
-                    <rect x="195" y="254" width="10" height="12" rx="1" fill="white"/>
-                    <circle cx="230" cy="260" r="14" fill="#e8e8ed"/>
-                    <polygon points="224,254 224,266 236,260" fill="#86868b"/>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">FocusTimer</p>
-                <p class="desc">A Pomodoro-style study timer with session tracking and break reminders.</p>
-                <div class="project-tags">
-                    <span>React</span>
-                    <span>JavaScript</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Project 5: Markdown Notes -->
-        <a class="project-card" href="#">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#f0fff0"/>
-                    <!-- Split view panels -->
-                    <rect x="45" y="40" width="150" height="220" rx="8" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
-                    <rect x="205" y="40" width="150" height="220" rx="8" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
-                    <!-- Left panel - markdown -->
-                    <text x="55" y="65" font-family="monospace" font-size="9" fill="#86868b"># Notes</text>
-                    <text x="55" y="82" font-family="monospace" font-size="8" fill="#1d1d1f">## Week 5</text>
-                    <text x="55" y="97" font-family="monospace" font-size="8" fill="#6e6e73">- arrays and loops</text>
-                    <text x="55" y="112" font-family="monospace" font-size="8" fill="#6e6e73">- **linked lists**</text>
-                    <text x="55" y="127" font-family="monospace" font-size="8" fill="#6e6e73">- recursion basics</text>
-                    <text x="55" y="150" font-family="monospace" font-size="8" fill="#1d1d1f">## Week 6</text>
-                    <text x="55" y="165" font-family="monospace" font-size="8" fill="#6e6e73">- trees and graphs</text>
-                    <text x="55" y="180" font-family="monospace" font-size="8" fill="#6e6e73">- BFS / DFS</text>
-                    <text x="55" y="195" font-family="monospace" font-size="8" fill="#0071e3">```python</text>
-                    <text x="55" y="210" font-family="monospace" font-size="8" fill="#34c759">def traverse(node):</text>
-                    <text x="55" y="225" font-family="monospace" font-size="8" fill="#6e6e73">  if not node:</text>
-                    <text x="55" y="240" font-family="monospace" font-size="8" fill="#6e6e73">    return</text>
-                    <!-- Right panel - rendered -->
-                    <text x="215" y="65" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1d1d1f">Notes</text>
-                    <text x="215" y="85" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#1d1d1f">Week 5</text>
-                    <circle cx="220" cy="97" r="2" fill="#1d1d1f"/>
-                    <text x="228" y="100" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">arrays and loops</text>
-                    <circle cx="220" cy="112" r="2" fill="#1d1d1f"/>
-                    <text x="228" y="115" font-family="Inter, sans-serif" font-weight="700" font-size="8" fill="#6e6e73">linked lists</text>
-                    <circle cx="220" cy="127" r="2" fill="#1d1d1f"/>
-                    <text x="228" y="130" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">recursion basics</text>
-                    <text x="215" y="155" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#1d1d1f">Week 6</text>
-                    <circle cx="220" cy="167" r="2" fill="#1d1d1f"/>
-                    <text x="228" y="170" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">trees and graphs</text>
-                    <circle cx="220" cy="182" r="2" fill="#1d1d1f"/>
-                    <text x="228" y="185" font-family="Inter, sans-serif" font-size="8" fill="#6e6e73">BFS / DFS</text>
-                    <!-- Code block -->
-                    <rect x="215" y="195" width="128" height="45" rx="4" fill="#f5f5f7"/>
-                    <text x="222" y="210" font-family="monospace" font-size="8" fill="#34c759">def traverse(node):</text>
-                    <text x="222" y="225" font-family="monospace" font-size="8" fill="#6e6e73">  if not node:</text>
-                    <!-- Divider label -->
-                    <text x="120" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#86868b">EDIT</text>
-                    <text x="280" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#86868b">PREVIEW</text>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">QuickNote</p>
-                <p class="desc">A split-view Markdown note-taking app with live preview and syntax highlighting.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>Markdown</span>
-                    <span>HTML</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Project 6: Game -->
-        <a class="project-card" href="#">
+        <!-- Project 6: Space Drifting -->
+        <a class="project-card" href="https://github.com/TheOohWee/space-drifting" target="_blank" rel="noopener">
             <div class="project-image">
                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="300" fill="#1d1d1f"/>
@@ -437,11 +454,10 @@
                 </svg>
             </div>
             <div class="project-text">
-                <p class="title">Space Blaster</p>
-                <p class="desc">A retro space shooter built with HTML5 Canvas. Waves, power-ups, and high scores.</p>
+                <p class="title">Space Drifting</p>
+                <p class="desc">Mini retro space game written in C as the final project for CSE 20311 — Fundamentals of Computing at Notre Dame.</p>
                 <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>Canvas</span>
+                    <span>C</span>
                     <span>Game</span>
                 </div>
             </div>
