@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Is the Enemy of Good — Amir Tomashpayev</title>
+    <meta name="description" content="Amir Tomashpayev on how a professor's advice — don't let great be the enemy of the good — helped him beat perfectionism and just start.">
+    <meta name="author" content="Amir Tomashpayev">
+    <link rel="canonical" href="https://www.atomashpayev.com/articles/perfect-is-the-enemy-of-good.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.atomashpayev.com/articles/perfect-is-the-enemy-of-good.html">
+    <meta property="og:title" content="Perfect Is the Enemy of Good — Amir Tomashpayev">
+    <meta property="og:description" content="Amir Tomashpayev on how a professor's advice — don't let great be the enemy of the good — helped him beat perfectionism and just start.">
+    <meta property="og:image" content="https://www.atomashpayev.com/assets/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Perfect Is the Enemy of Good — Amir Tomashpayev">
+    <meta name="twitter:description" content="Amir Tomashpayev on how a professor's advice — don't let great be the enemy of the good — helped him beat perfectionism and just start.">
+    <meta name="twitter:image" content="https://www.atomashpayev.com/assets/profile.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a.back {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a.back:hover { color: #0077ed; }
+        nav .nav-title { font-size: 0.85rem; font-weight: 600; color: #1d1d1f; }
+        nav .spacer { width: 60px; }
+
+        .article {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .article-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-tags span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            background: #e8eaf6;
+            color: #5c6bc0;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #86868b;
+            font-size: 0.85rem;
+        }
+
+        .article-meta img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .meta-text { display: flex; flex-direction: column; gap: 0.1rem; }
+        .meta-author { font-weight: 500; color: #1d1d1f; font-size: 0.85rem; }
+        .meta-details { font-size: 0.8rem; color: #86868b; }
+
+        .article-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: #1d1d1f;
+        }
+        .article-body blockquote {
+            border-left: 3px solid #0071e3;
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: #f5f5f7;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #6e6e73;
+        }
+        .article-body code {
+            background: #f5f5f7;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .article-footer a {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .article { padding: 6rem 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../articles.html" class="back">&lsaquo; Articles</a>
+        <span class="nav-title">Article</span>
+        <span class="spacer"></span>
+    </nav>
+
+    <article class="article">
+        <header class="article-header">
+            <div class="article-tags">
+                <span>Reflection</span>
+                <span>Writing</span>
+            </div>
+            <h1>"Perfect is the enemy of good." (Voltaire)</h1>
+            <div class="article-meta">
+                <img src="../assets/profile.jpg" alt="Amir">
+                <div class="meta-text">
+                    <span class="meta-author">Amir Tomashpayev</span>
+                    <span class="meta-details">July 16, 2026 &middot; 2 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-body">
+            <p>As my freshman year of college was coming to an end and it was time to begin studying for finals, I realized I still had to finish up projects and essays to submit. On the last week of school, I sat down with one of the best professors I had, and he told me to remember just one thing:</p>
+
+            <blockquote>Don't let great be the enemy of the good.</blockquote>
+
+            <p>It was a small seminar, one professor, about twelve of us, meeting all year in the same room. As my professor, he'd noticed my perfectionism take over whenever I wrote essays, and he was right to call it out. Professor showed me how I was hindering my own growth. I'd spend more time hunting for better wording with Grammarly than actually writing, and I'd take too long to start an essay in the first place, making outline after outline instead of just drafting. It's fine to polish a draft like a perfectionist, just not to start one that way! This trait spoiled my plans throughout the academic year and chipped away at my confidence. I was thinking that since I couldn't even write a great introduction, I wouldn't be able to write a "good" essay.</p>
+
+            <p>Obviously, I was wrong.</p>
+
+            <h2>Here's why that advice matters beyond just essay writing.</h2>
+
+            <p>It might sound cliche, but if you have an idea, "just give it a try" is actually the best advice. It won't always be a perfect essay or blog article, but hey, at least you're going to have something, and that something, even if it's not exactly what you'd like, can give you a hint of which direction to work in further.</p>
+
+            <p>Another example is this article! I wrote this draft two days ago and wasn't sure if I wanted to post it as my first ever piece on this blog. But then I realized it's not graded, I'm doing this for myself, so I figured I should just start instead of waiting forever. So here it is. Yes, it's far from perfect, but it's a start, and I'm sure it's the start of something great.</p>
+
+            <p>Don't let great be the enemy of the good &hellip; and start now.</p>
+        </div>
+
+        <div class="article-footer">
+            <a href="../articles.html">&larr; Back to all articles</a>
+        </div>
+    </article>
+</body>
+</html>
