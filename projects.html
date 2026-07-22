@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects — Amir Tomashpayev</title>
     <link rel="icon" type="image/jpeg" href="assets/profile.jpg">
-    <meta name="description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — spanning web development, machine learning, and systems programming.">
+    <meta name="description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — grouped by hackathons, machine learning, game development, and research.">
     <meta name="author" content="Amir Tomashpayev">
     <link rel="canonical" href="https://www.atomashpayev.com/projects.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.atomashpayev.com/projects.html">
     <meta property="og:title" content="Projects — Amir Tomashpayev">
-    <meta property="og:description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — spanning web development, machine learning, and systems programming.">
+    <meta property="og:description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — grouped by hackathons, machine learning, game development, and research.">
     <meta property="og:image" content="https://www.atomashpayev.com/assets/profile.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Projects — Amir Tomashpayev">
-    <meta name="twitter:description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — spanning web development, machine learning, and systems programming.">
+    <meta name="twitter:description" content="A collection of projects by Amir Tomashpayev, CS + Math student at Notre Dame — grouped by hackathons, machine learning, game development, and research.">
     <meta name="twitter:image" content="https://www.atomashpayev.com/assets/profile.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -71,7 +71,7 @@
         /* Header */
         .page-header {
             text-align: center;
-            padding: 7rem 2rem 3rem;
+            padding: 7rem 2rem 2.5rem;
             animation: fadeUp 0.8s ease-out;
         }
 
@@ -79,7 +79,7 @@
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 600;
             letter-spacing: -0.025em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -87,91 +87,135 @@
         }
 
         .page-header p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 300;
             color: #86868b;
         }
 
-        /* Project Grid */
-        .project-grid {
-            max-width: 960px;
+        /* Projects list */
+        .projects {
+            max-width: 760px;
             margin: 0 auto;
-            padding: 0 2rem 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            padding: 1.5rem 2rem 5rem;
         }
 
-        .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        .category {
+            margin-bottom: 3rem;
             animation: fadeUp 0.8s ease-out both;
+        }
+
+        .category:nth-of-type(2) { animation-delay: 0.08s; }
+        .category:nth-of-type(3) { animation-delay: 0.16s; }
+        .category:nth-of-type(4) { animation-delay: 0.24s; }
+
+        .category-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+        }
+
+        .category-header h2 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+        }
+
+        .category-header .count {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #a1a1a6;
+        }
+
+        /* Individual reference-style entry */
+        .project-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.1rem 0.85rem;
+            border-radius: 12px;
             text-decoration: none;
             color: inherit;
-            display: block;
+            transition: background 0.25s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.045);
         }
 
-        .project-card:nth-child(2) { animation-delay: 0.1s; }
-        .project-card:nth-child(3) { animation-delay: 0.2s; }
-        .project-card:nth-child(4) { animation-delay: 0.3s; }
-        .project-card:nth-child(5) { animation-delay: 0.4s; }
-        .project-card:nth-child(6) { animation-delay: 0.5s; }
+        .project-item:last-child { border-bottom: none; }
 
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        a.project-item:hover { background: #f0f0f2; }
+        a.project-item:hover .title { color: #0071e3; }
+        a.project-item:hover .arrow { opacity: 1; transform: translateX(3px); }
+
+        .num {
+            font-family: 'SF Mono', ui-monospace, 'Menlo', monospace;
+            font-size: 0.78rem;
+            color: #b0b0b5;
+            min-width: 1.7rem;
+            padding-top: 0.2rem;
+            text-align: right;
         }
 
-        .project-image {
-            width: 100%;
-            aspect-ratio: 4/3;
+        .body { flex: 1; min-width: 0; }
+
+        .title-row {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .project-text {
-            padding: 1.25rem;
-        }
-
-        .project-text .title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 0.35rem;
-        }
-
-        .project-text .desc {
-            font-size: 0.85rem;
-            color: #6e6e73;
-            font-weight: 300;
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.4rem;
+            align-items: baseline;
+            gap: 0.5rem;
             flex-wrap: wrap;
         }
 
-        .project-tags span {
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 0.2rem 0.6rem;
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            transition: color 0.25s ease;
+        }
+
+        .arrow {
+            color: #0071e3;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .badge {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #0071e3;
+            background: rgba(0, 113, 227, 0.1);
+            padding: 0.12rem 0.45rem;
             border-radius: 20px;
-            background: #f5f5f7;
+        }
+
+        .badge.muted {
             color: #86868b;
+            background: #ececee;
+        }
+
+        .meta {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #86868b;
+            margin-top: 0.2rem;
+        }
+
+        .desc {
+            font-size: 0.88rem;
+            font-weight: 300;
+            color: #515154;
+            line-height: 1.55;
+            margin-top: 0.45rem;
+        }
+
+        .tags {
+            font-family: 'SF Mono', ui-monospace, 'Menlo', monospace;
+            font-size: 0.72rem;
+            color: #a1a1a6;
+            margin-top: 0.5rem;
         }
 
         @keyframes fadeUp {
@@ -180,10 +224,9 @@
         }
 
         @media (max-width: 640px) {
-            .project-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
+            .projects { padding: 1rem 1.25rem 4rem; }
+            .num { min-width: 1.4rem; }
+            .project-item { gap: 0.7rem; padding: 1.1rem 0.4rem; }
         }
     </style>
 </head>
@@ -195,286 +238,147 @@
     </nav>
 
     <header class="page-header">
-        <h1>My Projects.</h1>
-        <p>Click to see github & demos</p>
+        <h1>Projects.</h1>
+        <p>Selected work, grouped by focus. Click any titled entry to open it on GitHub.</p>
     </header>
 
-    <section class="project-grid">
+    <main class="projects">
 
-        <!-- Project 1: WattsUp (YHack 2026) -->
-        <a class="project-card" href="https://github.com/TheOohWee/YHack-2026" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="wattsBg" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#fff8e1"/>
-                            <stop offset="100%" stop-color="#e8f5e9"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="400" height="300" fill="url(#wattsBg)"/>
-                    <!-- Phone-style card -->
-                    <rect x="80" y="40" width="240" height="220" rx="18" fill="white" stroke="#e8e8ed" stroke-width="1.5"/>
-                    <!-- Header -->
-                    <text x="100" y="68" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#86868b">TODAY'S USAGE</text>
-                    <text x="100" y="98" font-family="Inter, sans-serif" font-weight="600" font-size="26" fill="#1d1d1f">12.4 kWh</text>
-                    <text x="100" y="115" font-family="Inter, sans-serif" font-size="10" fill="#43a047">↓ 18% vs yesterday</text>
-                    <!-- Lightning bolt -->
-                    <polygon points="270,55 250,105 270,105 255,150 290,90 270,90 285,55" fill="#fbc02d" stroke="#f57f17" stroke-width="1.5" stroke-linejoin="round"/>
-                    <!-- Usage chart -->
-                    <line x1="100" y1="220" x2="300" y2="220" stroke="#e8e8ed" stroke-width="1"/>
-                    <rect x="105" y="190" width="14" height="30" rx="2" fill="#a5d6a7"/>
-                    <rect x="125" y="175" width="14" height="45" rx="2" fill="#81c784"/>
-                    <rect x="145" y="160" width="14" height="60" rx="2" fill="#66bb6a"/>
-                    <rect x="165" y="150" width="14" height="70" rx="2" fill="#4caf50"/>
-                    <rect x="185" y="170" width="14" height="50" rx="2" fill="#66bb6a"/>
-                    <rect x="205" y="155" width="14" height="65" rx="2" fill="#4caf50"/>
-                    <rect x="225" y="180" width="14" height="40" rx="2" fill="#81c784"/>
-                    <rect x="245" y="195" width="14" height="25" rx="2" fill="#a5d6a7"/>
-                    <rect x="265" y="185" width="14" height="35" rx="2" fill="#81c784"/>
-                    <rect x="285" y="200" width="14" height="20" rx="2" fill="#c8e6c9"/>
-                    <text x="100" y="245" font-family="Inter, sans-serif" font-size="9" fill="#86868b">Powered by K2 Think V2</text>
-                </svg>
+        <!-- ============ HACKATHONS ============ -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Hackathons</h2>
+                <span class="count">2 projects</span>
             </div>
-            <div class="project-text">
-                <p class="title">WattsUp</p>
-                <p class="desc">Smart energy advisor built at YHack 2026 — recommends habit changes to cut your electric bill. K2 Think V2, MongoDB Atlas, Supabase, Next.js.</p>
-                <div class="project-tags">
-                    <span>Next.js</span>
-                    <span>TypeScript</span>
-                    <span>MongoDB</span>
+
+            <a class="project-item" href="https://github.com/TheOohWee/YHack-2026" target="_blank" rel="noopener">
+                <span class="num">[1]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">WattsUp</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">YHack 2026 · Yale University</p>
+                    <p class="desc">Smart energy advisor that recommends habit changes to cut your electric bill. Powered by K2 Think V2, with MongoDB Atlas and Supabase behind a Next.js front end.</p>
+                    <p class="tags">Next.js · TypeScript · MongoDB · Supabase</p>
+                </div>
+            </a>
+
+            <div class="project-item">
+                <span class="num">[2]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">Ember</span>
+                        <span class="badge muted">link soon</span>
+                    </div>
+                    <p class="meta">Hackathon · University of Notre Dame</p>
+                    <p class="desc">Team project built during a hackathon at Notre Dame.</p>
                 </div>
             </div>
-        </a>
+        </section>
 
-        <!-- Project 2: Grokking Algorithms -->
-        <a class="project-card" href="https://github.com/TheOohWee/grokking_algorithms" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#e3f2fd"/>
-                    <!-- Graph edges -->
-                    <line x1="200" y1="80" x2="120" y2="150" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <line x1="200" y1="80" x2="280" y2="150" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <line x1="120" y1="150" x2="80" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <line x1="120" y1="150" x2="180" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <line x1="280" y1="150" x2="240" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <line x1="280" y1="150" x2="320" y2="220" stroke="#1e88e5" stroke-width="2" opacity="0.5"/>
-                    <!-- Highlighted shortest path -->
-                    <line x1="200" y1="80" x2="120" y2="150" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="120" y1="150" x2="180" y2="220" stroke="#ff9800" stroke-width="4" stroke-linecap="round"/>
-                    <!-- Nodes -->
-                    <circle cx="200" cy="80" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
-                    <text x="200" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">A</text>
-                    <circle cx="120" cy="150" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
-                    <text x="120" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">B</text>
-                    <circle cx="280" cy="150" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
-                    <text x="280" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">C</text>
-                    <circle cx="80" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
-                    <text x="80" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">D</text>
-                    <circle cx="180" cy="220" r="22" fill="#ff9800" stroke="white" stroke-width="3"/>
-                    <text x="180" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">E</text>
-                    <circle cx="240" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
-                    <text x="240" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">F</text>
-                    <circle cx="320" cy="220" r="22" fill="#1e88e5" stroke="white" stroke-width="3"/>
-                    <text x="320" y="226" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="white">G</text>
-                    <text x="200" y="270" text-anchor="middle" font-family="monospace" font-size="11" fill="#1565c0">BFS shortest path</text>
-                </svg>
+        <!-- ============ MACHINE LEARNING ============ -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Machine Learning</h2>
+                <span class="count">3 projects</span>
             </div>
-            <div class="project-text">
-                <p class="title">Grokking Algorithms</p>
-                <p class="desc">Worked examples from "Grokking Algorithms" — search, sorting, recursion, hash tables, graphs, and dynamic programming.</p>
-                <div class="project-tags">
-                    <span>JavaScript</span>
-                    <span>Algorithms</span>
+
+            <a class="project-item" href="https://github.com/TheOohWee/CSE-10124-LAB-4" target="_blank" rel="noopener">
+                <span class="num">[3]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">GPT from Scratch</span>
+                        <span class="badge">Main</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">CSE 10124: Building ChatGPT · Notre Dame</p>
+                    <p class="desc">Implemented the GPT-2 transformer architecture from scratch and trained it on Shakespeare. Final lab for the course.</p>
+                    <p class="tags">PyTorch · Transformers · NLP</p>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <!-- Project 3: Personal Website -->
-        <a class="project-card" href="https://github.com/TheOohWee/atomashpayev" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#f0f4ff"/>
-                    <!-- Browser window -->
-                    <rect x="60" y="50" width="280" height="200" rx="10" fill="white" stroke="#e8e8ed" stroke-width="2"/>
-                    <rect x="60" y="50" width="280" height="30" rx="10" fill="#f5f5f7"/>
-                    <rect x="60" y="70" width="280" height="10" fill="#f5f5f7"/>
-                    <!-- Dots -->
-                    <circle cx="78" cy="65" r="4" fill="#ff5f57"/>
-                    <circle cx="92" cy="65" r="4" fill="#febc2e"/>
-                    <circle cx="106" cy="65" r="4" fill="#28c840"/>
-                    <!-- URL bar -->
-                    <rect x="130" y="58" width="195" height="14" rx="4" fill="#e8e8ed"/>
-                    <text x="228" y="69" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#86868b">theoohwee.dev</text>
-                    <!-- Page content preview -->
-                    <circle cx="200" cy="115" r="18" fill="#e8eaf6"/>
-                    <rect x="160" y="140" width="80" height="8" rx="4" fill="#d1d1d6"/>
-                    <rect x="140" y="155" width="120" height="5" rx="2.5" fill="#e8e8ed"/>
-                    <rect x="155" y="165" width="90" height="5" rx="2.5" fill="#e8e8ed"/>
-                    <!-- Links -->
-                    <rect x="142" y="185" width="35" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
-                    <rect x="185" y="185" width="30" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
-                    <rect x="223" y="185" width="35" height="6" rx="3" fill="#0071e3" opacity="0.4"/>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">Personal Website</p>
-                <p class="desc">This very site! A minimal, Apple-inspired personal portfolio and blog — hand-written HTML, CSS, and SVG.</p>
-                <div class="project-tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>SVG</span>
+            <a class="project-item" href="https://github.com/Ngafney/garda-spring26" target="_blank" rel="noopener">
+                <span class="num">[4]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">Garda</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">Notre Dame SIBC — equity research</p>
+                    <p class="desc">Web scraping and sentiment-analysis pipeline that turns news and earnings-call text into signals for an ML model.</p>
+                    <p class="tags">Python · NLP · Sentiment Analysis</p>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <!-- Project 4: Hands-On ML -->
-        <a class="project-card" href="https://github.com/TheOohWee/handson-ml3" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#fff3e0"/>
-                    <!-- Neural net: layers of nodes -->
-                    <!-- Edges layer 1 -> 2 -->
-                    <g stroke="#ff9800" stroke-width="1" opacity="0.4">
-                        <line x1="90" y1="80" x2="200" y2="70"/>
-                        <line x1="90" y1="80" x2="200" y2="120"/>
-                        <line x1="90" y1="80" x2="200" y2="170"/>
-                        <line x1="90" y1="80" x2="200" y2="220"/>
-                        <line x1="90" y1="150" x2="200" y2="70"/>
-                        <line x1="90" y1="150" x2="200" y2="120"/>
-                        <line x1="90" y1="150" x2="200" y2="170"/>
-                        <line x1="90" y1="150" x2="200" y2="220"/>
-                        <line x1="90" y1="220" x2="200" y2="70"/>
-                        <line x1="90" y1="220" x2="200" y2="120"/>
-                        <line x1="90" y1="220" x2="200" y2="170"/>
-                        <line x1="90" y1="220" x2="200" y2="220"/>
-                    </g>
-                    <!-- Edges layer 2 -> 3 -->
-                    <g stroke="#ff9800" stroke-width="1" opacity="0.4">
-                        <line x1="200" y1="70" x2="310" y2="110"/>
-                        <line x1="200" y1="70" x2="310" y2="180"/>
-                        <line x1="200" y1="120" x2="310" y2="110"/>
-                        <line x1="200" y1="120" x2="310" y2="180"/>
-                        <line x1="200" y1="170" x2="310" y2="110"/>
-                        <line x1="200" y1="170" x2="310" y2="180"/>
-                        <line x1="200" y1="220" x2="310" y2="110"/>
-                        <line x1="200" y1="220" x2="310" y2="180"/>
-                    </g>
-                    <!-- Layer 1 -->
-                    <circle cx="90" cy="80" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="90" cy="150" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="90" cy="220" r="14" fill="#ffb74d" stroke="#e65100" stroke-width="2"/>
-                    <!-- Layer 2 -->
-                    <circle cx="200" cy="70" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="200" cy="120" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="200" cy="170" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="200" cy="220" r="14" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
-                    <!-- Layer 3 -->
-                    <circle cx="310" cy="110" r="14" fill="#fb8c00" stroke="#e65100" stroke-width="2"/>
-                    <circle cx="310" cy="180" r="14" fill="#fb8c00" stroke="#e65100" stroke-width="2"/>
-                    <!-- Labels -->
-                    <text x="90" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">input</text>
-                    <text x="200" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">hidden</text>
-                    <text x="310" y="265" text-anchor="middle" font-family="monospace" font-size="9" fill="#e65100">output</text>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">Hands-On ML Notes</p>
-                <p class="desc">My notes and notebooks working through "Hands-On Machine Learning" — scikit-learn, Keras, and TensorFlow 2.</p>
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>Jupyter</span>
-                    <span>TensorFlow</span>
+            <a class="project-item" href="https://www.kaggle.com/code/amirtomashpayev/di-prototype-model" target="_blank" rel="noopener">
+                <span class="num">[5]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">Amazon</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">Kaggle notebook</p>
+                    <p class="desc">Prototype machine learning model, developed and published as a Kaggle notebook.</p>
+                    <p class="tags">Python · Kaggle · scikit-learn</p>
                 </div>
-            </div>
-        </a>
+            </a>
+        </section>
 
-        <!-- Project 5: GPT from Scratch -->
-        <a class="project-card" href="https://github.com/TheOohWee/CSE-10124-LAB-4" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#1d1d1f"/>
-                    <!-- Terminal window -->
-                    <rect x="40" y="35" width="320" height="230" rx="10" fill="#2d2d2d"/>
-                    <rect x="40" y="35" width="320" height="28" rx="10" fill="#3a3a3c"/>
-                    <rect x="40" y="55" width="320" height="8" fill="#3a3a3c"/>
-                    <!-- Dots -->
-                    <circle cx="58" cy="49" r="4" fill="#ff5f57"/>
-                    <circle cx="72" cy="49" r="4" fill="#febc2e"/>
-                    <circle cx="86" cy="49" r="4" fill="#28c840"/>
-                    <!-- Terminal text -->
-                    <text x="55" y="85" font-family="monospace" font-size="10" fill="#28c840">$</text>
-                    <text x="68" y="85" font-family="monospace" font-size="10" fill="#e8e8ed">python sample.py --model gpt2</text>
-                    <text x="55" y="105" font-family="monospace" font-size="10" fill="#86868b">step 5000  loss=1.42</text>
-                    <text x="55" y="130" font-family="monospace" font-size="10" fill="#4fc3f7">ROMEO:</text>
-                    <text x="55" y="148" font-family="monospace" font-size="10" fill="#e8e8ed">But soft, what light through</text>
-                    <text x="55" y="163" font-family="monospace" font-size="10" fill="#e8e8ed">yonder window breaks?</text>
-                    <text x="55" y="178" font-family="monospace" font-size="10" fill="#e8e8ed">It is the east, and Juliet</text>
-                    <text x="55" y="193" font-family="monospace" font-size="10" fill="#e8e8ed">is the sun.</text>
-                    <text x="55" y="218" font-family="monospace" font-size="10" fill="#4fc3f7">JULIET:</text>
-                    <text x="55" y="236" font-family="monospace" font-size="10" fill="#e8e8ed">O Romeo, Romeo, wherefore</text>
-                    <text x="55" y="251" font-family="monospace" font-size="10" fill="#e8e8ed">art thou_</text>
-                </svg>
+        <!-- ============ GAME DEVELOPMENT ============ -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Game Development</h2>
+                <span class="count">2 projects</span>
             </div>
-            <div class="project-text">
-                <p class="title">GPT from Scratch</p>
-                <p class="desc">Implemented the GPT-2 transformer architecture from scratch and trained it on Shakespeare. Final lab for CSE 10124: Building ChatGPT.</p>
-                <div class="project-tags">
-                    <span>PyTorch</span>
-                    <span>Transformers</span>
-                    <span>NLP</span>
+
+            <a class="project-item" href="https://github.com/TheOohWee/space-drifting" target="_blank" rel="noopener">
+                <span class="num">[6]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">Space Drifting</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">CSE 20311: Fundamentals of Computing · Notre Dame</p>
+                    <p class="desc">Retro arcade space shooter written in C. Final project for the course.</p>
+                    <p class="tags">C · Game Loop · Graphics</p>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <!-- Project 6: Space Drifting -->
-        <a class="project-card" href="https://github.com/TheOohWee/space-drifting" target="_blank" rel="noopener">
-            <div class="project-image">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#1d1d1f"/>
-                    <!-- Stars -->
-                    <circle cx="50" cy="30" r="1.5" fill="white" opacity="0.6"/>
-                    <circle cx="120" cy="55" r="1" fill="white" opacity="0.4"/>
-                    <circle cx="300" cy="40" r="1.5" fill="white" opacity="0.5"/>
-                    <circle cx="350" cy="80" r="1" fill="white" opacity="0.3"/>
-                    <circle cx="80" cy="100" r="1" fill="white" opacity="0.5"/>
-                    <circle cx="250" cy="25" r="1.5" fill="white" opacity="0.4"/>
-                    <circle cx="180" cy="45" r="1" fill="white" opacity="0.6"/>
-                    <circle cx="330" cy="130" r="1" fill="white" opacity="0.4"/>
-                    <!-- Player ship -->
-                    <polygon points="200,180 185,210 200,200 215,210" fill="#0071e3"/>
-                    <polygon points="200,185 192,205 200,198 208,205" fill="#4fc3f7"/>
-                    <!-- Engine glow -->
-                    <ellipse cx="200" cy="212" rx="5" ry="8" fill="#ff9f0a" opacity="0.6"/>
-                    <!-- Enemies -->
-                    <rect x="80" y="70" width="24" height="18" rx="4" fill="#ff453a"/>
-                    <rect x="84" y="75" width="4" height="4" fill="#1d1d1f"/>
-                    <rect x="96" y="75" width="4" height="4" fill="#1d1d1f"/>
-                    <rect x="160" y="55" width="24" height="18" rx="4" fill="#ff453a"/>
-                    <rect x="164" y="60" width="4" height="4" fill="#1d1d1f"/>
-                    <rect x="176" y="60" width="4" height="4" fill="#1d1d1f"/>
-                    <rect x="270" y="80" width="24" height="18" rx="4" fill="#ff453a"/>
-                    <rect x="274" y="85" width="4" height="4" fill="#1d1d1f"/>
-                    <rect x="286" y="85" width="4" height="4" fill="#1d1d1f"/>
-                    <!-- Bullet -->
-                    <rect x="198" y="160" width="4" height="12" rx="2" fill="#4fc3f7"/>
-                    <!-- HUD -->
-                    <text x="30" y="25" font-family="monospace" font-size="10" fill="#28c840">SCORE: 4200</text>
-                    <text x="310" y="25" font-family="monospace" font-size="10" fill="#ff453a">HP: |||</text>
-                    <!-- Ground line -->
-                    <line x1="0" y1="275" x2="400" y2="275" stroke="#3a3a3c" stroke-width="1"/>
-                    <text x="200" y="292" text-anchor="middle" font-family="monospace" font-size="9" fill="#86868b">WAVE 3</text>
-                </svg>
-            </div>
-            <div class="project-text">
-                <p class="title">Space Drifting</p>
-                <p class="desc">Mini retro space game written in C as the final project for CSE 20311 — Fundamentals of Computing at Notre Dame.</p>
-                <div class="project-tags">
-                    <span>C</span>
-                    <span>Game</span>
+            <a class="project-item" href="https://github.com/TheOohWee/plbx1" target="_blank" rel="noopener">
+                <span class="num">[7]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">Playbox OA</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">Online assessment · startup take-home</p>
+                    <p class="desc">Playable game built as an online-assessment take-home for a startup.</p>
+                    <p class="tags">TypeScript · Game Dev</p>
                 </div>
-            </div>
-        </a>
+            </a>
+        </section>
 
-    </section>
+        <!-- ============ RESEARCH ============ -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Research</h2>
+                <span class="count">1 project</span>
+            </div>
+
+            <a class="project-item" href="https://github.com/TheOohWee/NeuroCotansSpring26" target="_blank" rel="noopener">
+                <span class="num">[8]</span>
+                <div class="body">
+                    <div class="title-row">
+                        <span class="title">NeuroCotans</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </div>
+                    <p class="meta">Arikan Research Lab · Spring 2026</p>
+                    <p class="desc">End-of-semester research report and presentation from the lab.</p>
+                </div>
+            </a>
+        </section>
+
+    </main>
 </body>
 </html>
