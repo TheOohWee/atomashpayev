@@ -71,7 +71,7 @@
         /* Header */
         .page-header {
             text-align: center;
-            padding: 7rem 2rem 2.5rem;
+            padding: 7rem 2rem 2rem;
             animation: fadeUp 0.8s ease-out;
         }
 
@@ -94,13 +94,13 @@
 
         /* Projects list */
         .projects {
-            max-width: 760px;
+            max-width: 680px;
             margin: 0 auto;
             padding: 1.5rem 2rem 5rem;
         }
 
         .category {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             animation: fadeUp 0.8s ease-out both;
         }
 
@@ -108,41 +108,55 @@
         .category:nth-of-type(3) { animation-delay: 0.16s; }
         .category:nth-of-type(4) { animation-delay: 0.24s; }
 
-        .category-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.75rem;
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.65rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-        }
-
-        .category-header h2 {
-            font-size: 1.05rem;
+        /* Centered category title with a short accent underline */
+        .category-title {
+            text-align: center;
+            font-size: 1.5rem;
             font-weight: 600;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
             color: #1d1d1f;
         }
 
-        .category-header .count {
-            font-size: 0.78rem;
-            font-weight: 400;
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 42px;
+            height: 3px;
+            margin: 0.7rem auto 0;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #0071e3, #5ac8fa);
+        }
+
+        /* Centered year divider with hairlines on either side */
+        .year {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             color: #a1a1a6;
         }
 
-        /* Individual reference-style entry */
+        .year::before,
+        .year::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        /* Individual entry */
         .project-item {
             display: flex;
-            gap: 1rem;
-            padding: 1.1rem 0.85rem;
+            gap: 0.9rem;
+            padding: 0.9rem 0.75rem;
             border-radius: 12px;
             text-decoration: none;
             color: inherit;
             transition: background 0.25s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.045);
         }
-
-        .project-item:last-child { border-bottom: none; }
 
         a.project-item:hover { background: #f0f0f2; }
         a.project-item:hover .title { color: #0071e3; }
@@ -151,9 +165,9 @@
         .num {
             font-family: 'SF Mono', ui-monospace, 'Menlo', monospace;
             font-size: 0.78rem;
-            color: #b0b0b5;
-            min-width: 1.7rem;
-            padding-top: 0.2rem;
+            color: #c2c2c7;
+            min-width: 1.6rem;
+            padding-top: 0.15rem;
             text-align: right;
         }
 
@@ -191,24 +205,17 @@
             border-radius: 20px;
         }
 
-        .badge.muted {
-            color: #86868b;
-            background: #ececee;
-        }
-
-        .meta {
-            font-size: 0.78rem;
-            font-weight: 400;
-            color: #86868b;
-            margin-top: 0.2rem;
+        .badge.award {
+            color: #b26a00;
+            background: rgba(255, 159, 10, 0.14);
         }
 
         .desc {
             font-size: 0.88rem;
             font-weight: 300;
             color: #515154;
-            line-height: 1.55;
-            margin-top: 0.45rem;
+            line-height: 1.5;
+            margin-top: 0.3rem;
         }
 
         .tags {
@@ -225,8 +232,8 @@
 
         @media (max-width: 640px) {
             .projects { padding: 1rem 1.25rem 4rem; }
-            .num { min-width: 1.4rem; }
-            .project-item { gap: 0.7rem; padding: 1.1rem 0.4rem; }
+            .num { min-width: 1.3rem; }
+            .project-item { gap: 0.6rem; padding: 0.9rem 0.4rem; }
         }
     </style>
 </head>
@@ -239,28 +246,26 @@
 
     <header class="page-header">
         <h1>Projects.</h1>
-        <p>Selected work, grouped by focus. Click any titled entry to open it on GitHub.</p>
+        <p>Selected work, grouped by focus.</p>
     </header>
 
     <main class="projects">
 
         <!-- ============ HACKATHONS ============ -->
         <section class="category">
-            <div class="category-header">
-                <h2>Hackathons</h2>
-                <span class="count">2 projects</span>
-            </div>
+            <h2 class="category-title">Hackathons</h2>
+
+            <div class="year">2026</div>
 
             <a class="project-item" href="https://github.com/TheOohWee/YHack-2026" target="_blank" rel="noopener">
                 <span class="num">[1]</span>
                 <div class="body">
                     <div class="title-row">
-                        <span class="title">WattsUp</span>
+                        <span class="title">WattsUp built @ Yale</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">YHack 2026 · Yale University</p>
-                    <p class="desc">Smart energy advisor that recommends habit changes to cut your electric bill. Powered by K2 Think V2, with MongoDB Atlas and Supabase behind a Next.js front end.</p>
-                    <p class="tags">Next.js · TypeScript · MongoDB · Supabase</p>
+                    <p class="desc">Smart energy advisor that recommends habit changes to lower your electric bill.</p>
+                    <p class="tags">Next.js · TypeScript · MongoDB · Supabase · K2V2</p>
                 </div>
             </a>
 
@@ -268,11 +273,11 @@
                 <span class="num">[2]</span>
                 <div class="body">
                     <div class="title-row">
-                        <span class="title">Ember</span>
+                        <span class="title">Ember built @ Notre Dame</span>
+                        <span class="badge award">1st place ($3k)</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">1st place ($3,000) · Notre Dame Hackathon · Apr 2026</p>
-                    <p class="desc">Accessibility input driver that converts face and hand motion into OS-level mouse and keyboard events. Built a 30 fps MediaPipe computer-vision pipeline and an ElevenLabs voice agent with custom tool calling.</p>
+                    <p class="desc">Accessibility driver that turns face and hand motion into OS-level mouse and keyboard control.</p>
                     <p class="tags">Python · MediaPipe · ElevenLabs · FastAPI</p>
                 </div>
             </a>
@@ -280,10 +285,9 @@
 
         <!-- ============ MACHINE LEARNING ============ -->
         <section class="category">
-            <div class="category-header">
-                <h2>Machine Learning</h2>
-                <span class="count">3 projects</span>
-            </div>
+            <h2 class="category-title">Machine Learning</h2>
+
+            <div class="year">2026</div>
 
             <a class="project-item" href="https://github.com/TheOohWee/CSE-10124-LAB-4" target="_blank" rel="noopener">
                 <span class="num">[3]</span>
@@ -293,11 +297,12 @@
                         <span class="badge">Main</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">CSE 10124: Building ChatGPT · Notre Dame</p>
-                    <p class="desc">Implemented the GPT-2 transformer architecture from scratch and trained it on Shakespeare. Final lab for the course.</p>
-                    <p class="tags">PyTorch · Transformers · NLP</p>
+                    <p class="desc">The GPT-2 transformer architecture, built from scratch, benchmarked using PyTorch and trained on Shakespeare.</p>
+                    <p class="tags">PyTorch · Transformers · NLP · Colab</p>
                 </div>
             </a>
+
+            <div class="year">2026</div>
 
             <a class="project-item" href="https://github.com/Ngafney/garda-spring26" target="_blank" rel="noopener">
                 <span class="num">[4]</span>
@@ -306,11 +311,12 @@
                         <span class="title">Garda</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">Student International Business Council · Sep 2025 – Apr 2026</p>
-                    <p class="desc">Scraped roughly 9,000 earnings-call transcripts and built an NLP pipeline producing z-scores and breadth signals across five macro themes for Garda Capital Partners. Benchmarked AI sentiment at 83% and 81% against Citi and VIX; presented to Garda PMs in NYC.</p>
-                    <p class="tags">Python · NLP · Sentiment Analysis</p>
+                    <p class="desc">NLP pipeline turning ~9,000 earnings-call transcripts into sentiment signals for Garda Capital Partners.</p>
+                    <p class="tags">Python · Classification · Sentiment Analysis · Hugging Face Models · beautifulsoup4</p>
                 </div>
             </a>
+
+            <div class="year">2025</div>
 
             <a class="project-item" href="https://www.kaggle.com/code/amirtomashpayev/di-prototype-model" target="_blank" rel="noopener">
                 <span class="num">[5]</span>
@@ -319,19 +325,17 @@
                         <span class="title">Amazon</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">Amazon Sustainability · Student International Business Council</p>
-                    <p class="desc">Designed a 0–10 Durability Index quantifying product longevity for Amazon Sustainability and tuned an XGBoost regressor (RMSE = 0.91 on a held-out set). Presented to Amazon SWEs in Boston, sparking interest in B2B supplier-audit apps.</p>
-                    <p class="tags">Python · XGBoost · Regression</p>
+                    <p class="desc">A 0–10 Durability Index scoring product longevity for Amazon Sustainability, on a tuned XGBoost regressor.</p>
+                    <p class="tags">Python · XGBoost · Regression · Kaggle</p>
                 </div>
             </a>
         </section>
 
         <!-- ============ GAME DEVELOPMENT ============ -->
         <section class="category">
-            <div class="category-header">
-                <h2>Game Development</h2>
-                <span class="count">2 projects</span>
-            </div>
+            <h2 class="category-title">Game Dev</h2>
+
+            <div class="year">2026</div>
 
             <a class="project-item" href="https://github.com/TheOohWee/space-drifting" target="_blank" rel="noopener">
                 <span class="num">[6]</span>
@@ -340,9 +344,8 @@
                         <span class="title">Space Drifting</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">CSE 20311: Fundamentals of Computing · Notre Dame</p>
-                    <p class="desc">Retro arcade space shooter written in C. Final project for the course.</p>
-                    <p class="tags">C · Game Loop · Graphics</p>
+                    <p class="desc">Retro arcade space shooter written in C.</p>
+                    <p class="tags">C · vim · X11</p>
                 </div>
             </a>
 
@@ -350,22 +353,20 @@
                 <span class="num">[7]</span>
                 <div class="body">
                     <div class="title-row">
-                        <span class="title">Playbox OA</span>
+                        <span class="title">Playable Ad </span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">Online assessment · startup take-home</p>
-                    <p class="desc">Playable game built as an online-assessment take-home for a startup.</p>
-                    <p class="tags">TypeScript · Game Dev</p>
+                    <p class="desc">2D playable game I did as an OA for a startup.</p>
+                    <p class="tags">TypeScript · Cocos Creator</p>
                 </div>
             </a>
         </section>
 
         <!-- ============ RESEARCH ============ -->
         <section class="category">
-            <div class="category-header">
-                <h2>Research</h2>
-                <span class="count">1 project</span>
-            </div>
+            <h2 class="category-title">Research</h2>
+
+            <div class="year">2026</div>
 
             <a class="project-item" href="https://github.com/TheOohWee/NeuroCotansSpring26" target="_blank" rel="noopener">
                 <span class="num">[8]</span>
@@ -374,8 +375,7 @@
                         <span class="title">NeuroCotans</span>
                         <span class="arrow">&rsaquo;</span>
                     </div>
-                    <p class="meta">Arikan Research Lab · Spring 2026</p>
-                    <p class="desc">End-of-semester research report and presentation from the lab.</p>
+                    <p class="desc">Implemented llm environment generation and mc dropout uncertainty on a mature existing codebase</p>
                 </div>
             </a>
         </section>
