@@ -100,27 +100,43 @@
         }
 
         .semester {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             animation: fadeUp 0.8s ease-out both;
         }
 
         .semester:nth-child(2) { animation-delay: 0.15s; }
         .semester:nth-child(3) { animation-delay: 0.3s; }
+        .semester:nth-child(4) { animation-delay: 0.45s; }
 
-        /* Centered year-group header with a short accent underline */
-        .year-header {
-            text-align: center;
+        /* Centered semester title with a short accent underline */
+        .semester-label {
+            list-style: none;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            border-radius: 14px;
+        }
+
+        .semester-label::-webkit-details-marker { display: none; }
+
+        .semester-label:focus-visible {
+            outline: 2px solid #0071e3;
+            outline-offset: 4px;
+        }
+
+        .semester-title {
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             color: #1d1d1f;
-            margin: 3rem 0 1.5rem;
-            animation: fadeUp 0.8s ease-out both;
+            transition: color 0.3s ease;
         }
 
-        .year-header:first-child { margin-top: 0; }
-
-        .year-header::after {
+        .semester-title::after {
             content: '';
             display: block;
             width: 42px;
@@ -128,56 +144,34 @@
             margin: 0.7rem auto 0;
             border-radius: 2px;
             background: linear-gradient(90deg, #0071e3, #5ac8fa);
+            transition: width 0.3s ease;
         }
 
-        .semester-label {
-            list-style: none;
-            cursor: pointer;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            border-radius: 14px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #1d1d1f;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .semester-label::-webkit-details-marker { display: none; }
-
-        .semester-label:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); }
-
-        .semester-label:focus-visible {
-            outline: 2px solid #0071e3;
-            outline-offset: 2px;
-        }
+        .semester-label:hover .semester-title::after,
+        .semester[open] .semester-title::after { width: 72px; }
 
         .semester-meta {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.35rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            letter-spacing: 0.02em;
-            text-transform: none;
             color: #86868b;
+            transition: color 0.3s ease;
         }
 
+        .semester-label:hover .semester-meta { color: #0071e3; }
+
         .chevron {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             transition: transform 0.3s ease;
         }
 
         .semester[open] .chevron { transform: rotate(180deg); }
 
         .semester-body {
-            padding-top: 0.75rem;
+            padding-top: 1.25rem;
             animation: fadeDown 0.35s ease-out;
         }
 
@@ -286,13 +280,10 @@
 
     <section class="semesters">
 
-        <!-- ============ SOPHOMORE YEAR ============ -->
-        <h2 class="year-header">Sophomore Year</h2>
-
         <!-- Spring 2027 — Sophomore Spring (Upcoming) -->
         <details class="semester">
             <summary class="semester-label">
-                <span>Spring 2027</span>
+                <span class="semester-title">Spring 2027</span>
                 <span class="semester-meta">7 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="semester-body">
@@ -404,7 +395,7 @@
         <!-- Fall 2026 — Sophomore Fall -->
         <details class="semester">
             <summary class="semester-label">
-                <span>Fall 2026</span>
+                <span class="semester-title">Fall 2026</span>
                 <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="semester-body">
@@ -496,13 +487,10 @@
             </div>
         </details>
 
-        <!-- ============ FRESHMAN YEAR ============ -->
-        <h2 class="year-header">Freshman Year</h2>
-
         <!-- Spring 2026 — Freshman Spring -->
         <details class="semester">
             <summary class="semester-label">
-                <span>Spring 2026</span>
+                <span class="semester-title">Spring 2026</span>
                 <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="semester-body">
@@ -595,7 +583,7 @@
         <!-- Fall 2025 — Freshman Fall -->
         <details class="semester">
             <summary class="semester-label">
-                <span>Fall 2025</span>
+                <span class="semester-title">Fall 2025</span>
                 <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="semester-body">
