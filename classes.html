@@ -100,7 +100,7 @@
         }
 
         .semester {
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
             animation: fadeUp 0.8s ease-out both;
         }
 
@@ -131,13 +131,59 @@
         }
 
         .semester-label {
-            font-size: 0.75rem;
+            list-style: none;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-radius: 14px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
+            color: #1d1d1f;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .semester-label::-webkit-details-marker { display: none; }
+
+        .semester-label:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); }
+
+        .semester-label:focus-visible {
+            outline: 2px solid #0071e3;
+            outline-offset: 2px;
+        }
+
+        .semester-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-transform: none;
             color: #86868b;
-            margin-bottom: 0.75rem;
-            padding-left: 0.25rem;
+        }
+
+        .chevron {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .semester[open] .chevron { transform: rotate(180deg); }
+
+        .semester-body {
+            padding-top: 0.75rem;
+            animation: fadeDown 0.35s ease-out;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .class-card {
@@ -200,6 +246,12 @@
             line-height: 1.45;
         }
 
+        .course-divider {
+            height: 1px;
+            margin: 1.25rem 0.25rem 1.5rem;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.22), transparent);
+        }
+
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -238,8 +290,12 @@
         <h2 class="year-header">Sophomore Year</h2>
 
         <!-- Spring 2027 — Sophomore Spring (Upcoming) -->
-        <div class="semester">
-            <p class="semester-label">Spring 2027</p>
+        <details class="semester">
+            <summary class="semester-label">
+                <span>Spring 2027</span>
+                <span class="semester-meta">7 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </summary>
+            <div class="semester-body">
 
             <div class="class-card">
                 <div class="class-icon" style="background: #e8f5e9;">
@@ -300,6 +356,8 @@
                 </div>
             </div>
 
+            <div class="course-divider" aria-hidden="true"></div>
+
             <div class="class-card">
                 <div class="class-icon" style="background: #fff3e0;">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -340,11 +398,16 @@
                     <p class="class-desc">Second semester of the Glynn Family Honors research practicum.</p>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Fall 2026 — Sophomore Fall -->
-        <div class="semester">
-            <p class="semester-label">Fall 2026</p>
+        <details class="semester">
+            <summary class="semester-label">
+                <span>Fall 2026</span>
+                <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </summary>
+            <div class="semester-body">
 
             <div class="class-card">
                 <div class="class-icon" style="background: #e0f7fa;">
@@ -415,6 +478,8 @@
                 </div>
             </div>
 
+            <div class="course-divider" aria-hidden="true"></div>
+
             <div class="class-card">
                 <div class="class-icon" style="background: #fff3e0;">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -428,14 +493,19 @@
                     <p class="class-desc">Glynn Family Honors research methods and faculty-mentored inquiry.</p>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- ============ FRESHMAN YEAR ============ -->
         <h2 class="year-header">Freshman Year</h2>
 
         <!-- Spring 2026 — Freshman Spring -->
-        <div class="semester">
-            <p class="semester-label">Spring 2026</p>
+        <details class="semester">
+            <summary class="semester-label">
+                <span>Spring 2026</span>
+                <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </summary>
+            <div class="semester-body">
 
             <div class="class-card">
                 <div class="class-icon" style="background: #fce4ec;">
@@ -478,6 +548,8 @@
                 </div>
             </div>
 
+            <div class="course-divider" aria-hidden="true"></div>
+
             <div class="class-card">
                 <div class="class-icon" style="background: #fff3e0;">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -517,11 +589,16 @@
                     <p class="class-desc">2nd semester of Glynn Family Honors interdisciplinary seminar.</p>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Fall 2025 — Freshman Fall -->
-        <div class="semester">
-            <p class="semester-label">Fall 2025</p>
+        <details class="semester">
+            <summary class="semester-label">
+                <span>Fall 2025</span>
+                <span class="semester-meta">6 classes<svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </summary>
+            <div class="semester-body">
 
             <div class="class-card">
                 <div class="class-icon" style="background: #fce4ec;">
@@ -549,6 +626,8 @@
                     <p class="class-desc">Logic, proofs, sets, combinatorics, and discrete structures.</p>
                 </div>
             </div>
+
+            <div class="course-divider" aria-hidden="true"></div>
 
             <div class="class-card">
                 <div class="class-icon" style="background: #fff3e0;">
@@ -605,7 +684,8 @@
                     <p class="class-desc">Reflection, vocation, and the Notre Dame liberal arts tradition.</p>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
     </section>
 </body>
