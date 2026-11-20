@@ -111,21 +111,21 @@
         .meta-details { font-size: 0.8rem; color: #86868b; }
 
         .article-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
-        .article-body p { margin-bottom: 1.5rem; }
-        .article-body h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1rem;
-            color: #1d1d1f;
+        .article-body p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
         }
-        .article-body blockquote {
-            border-left: 3px solid #0071e3;
-            padding: 0.75rem 1.25rem;
-            margin: 1.5rem 0;
-            background: #f5f5f7;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #6e6e73;
+        /* One style for every standout line: quotes, turning points, section openers */
+        .article-body p.key-line {
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+            margin: 2rem 0;
         }
         .article-body code {
             background: #f5f5f7;
@@ -187,13 +187,13 @@
         <div class="article-body">
             <p>As my freshman year of college was coming to an end and it was time to begin studying for finals, I realized I still had to finish up projects and essays to submit. On the last week of school, I sat down with one of the best professors I had, and he told me to remember just one thing:</p>
 
-            <blockquote>Don't let great be the enemy of the good.</blockquote>
+            <p class="key-line">&ldquo;Don&rsquo;t let great be the enemy of the good.&rdquo;</p>
 
             <p>It was a small seminar, one professor, about twelve of us, meeting all year in the same room. As my professor, he'd noticed my perfectionism take over whenever I wrote essays, and he was right to call it out. Professor showed me how I was hindering my own growth. I'd spend more time hunting for better wording with Grammarly than actually writing, and I'd take too long to start an essay in the first place, making outline after outline instead of just drafting. It's fine to polish a draft like a perfectionist, just not to start one that way! This trait spoiled my plans throughout the academic year and chipped away at my confidence. I was thinking that since I couldn't even write a great introduction, I wouldn't be able to write a "good" essay.</p>
 
-            <p>I was wrong!</p>
+            <p class="key-line">I was wrong!</p>
 
-            <h2>This matters beyond just essay writing.</h2>
+            <p class="key-line">This matters beyond just essay writing.</p>
 
             <p>It might sound cliche, but if you have an idea, "just give it a try" is actually the best advice. It won't always be a perfect essay or blog article, but hey, at least you're going to have something, and that something, even if it's not exactly what you'd like, can give you a hint of which direction to work in further.</p>
 
